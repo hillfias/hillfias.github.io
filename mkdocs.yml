@@ -1,27 +1,69 @@
-site_name: Will's Blog
-site_description: William Fuchs' blog. A great place to be.
+site_name: Boundless Adventures
+site_description: Welcome to William Fuchs' blog. Here be articles about HomeLab, HomeCinema, HomeOffice, Music, Science, Health, Content Creation, Linguistics, Philosophy and much more... Come on in.
 site_url: https://william-fuchs.com/
 
 theme:
   name: material
+  custom_dir: overrides
+  palette:
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/link
+        name: Switch to light mode
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue
+      accent: teal
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: teal
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to system preference
+
   features:
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.path
     - navigation.indexes
+    - toc.follow
+    - toc.integrate
+    - navigation.top
+    - navigation.footer
+    - header.autohide
+    - announce.dismiss
+
+  icon:
+    tag:
+      html: fontawesome/brands/html5
+      js: fontawesome/brands/js
+      css:  fontawesome/brands/css3
 
 plugins:
   - search
   - blog:
+      authors: false
       blog_toc: true
       archive_date_format: MMMM yyyy
       categories_allowed:
-        - Holidays
-        - News
-      authors_profiles: true
+        - MetaBlog
+        - HomeLab
       pagination_per_page: 5
       archive_pagination_per_page: 10
       categories_pagination_per_page: 10
-      post_slugify: !!python/object/apply:ext.slugs.slugify
-        kwds:
-          short: true
+      post_url_format: "{slug}"
   - meta
   - tags
   - rss:
@@ -31,23 +73,98 @@ plugins:
         as_update: date.updated
 
 extra:
+  status:
+    updated-soon: This article has fallen a bit behind and is currently being reworked. It will be updated soon.
+  generator: false
   social:
-    - icon: fontawesome/brands/mastodon
-      name: squidfunk on Mastodon
-      link: https://fosstodon.org/@squidfunk
+    - icon: fontawesome/brands/x-twitter
+      name: Hillfias on X
+      link: 
+    - icon: fontawesome/brands/instagram
+      name: Hillfias on Instagram
+      link:
+    - icon: fontawesome/brands/reddit
+      name: Hillfias on Reddit
+      link:
+    - icon: fontawesome/brands/facebook
+      name: Hillfias on Facebook
+      link:
+    - icon: fontawesome/brands/twitch
+      name: Hillfias on Twitch
+      link:
+    - icon: fontawesome/brands/youtube
+      name: Hillfias on Youtube
+      link:
+    - icon: fontawesome/brands/discord
+      name: Hillfias on Discord
+      link:
+    - icon: fontawesome/brands/stack-overflow
+      name: Hillfias on Stack-Overflow
+      link:
+    - icon: fontawesome/brands/tiktok
+      name: Hillfias on Stack-Overflow
+      link:
+    - icon: fontawesome/brands/linkedin
+      name: Hillfias on Stack-Overflow
+      link:
+    - icon: fontawesome/brands/github
+      name: Hillfias on Stack-Overflow
+      link:
+    - icon: fontawesome/brands/paypal
+      name: Hillfias on Stack-Overflow
+      link:
+    - icon: fontawesome/brands/patreon
+      name: Hillfias on Stack-Overflow
+      link:
+    - icon: fontawesome/brands/bitcoin
+      name: Hillfias on Stack-Overflow
+      link:
+  tags:
+    HTML5: html
+    JavaScript: js
+    CSS: css
 
-hooks:
-  - hooks/socialmedia.py
-
+copyright:  <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://william-fuchs.com">william-fuchs.com</a> &copy; 2025 by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://william-fuchs.com/about-me">William Fuchs</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-ND 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nd.svg?ref=chooser-v1" alt=""></a></p> 
 markdown_extensions:
+  # enable emojis and icons to be used in Markdown ---------------
   - attr_list
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  # --------------------------------------------------------------
+  # enable warning, note, tips etc. blocks - which can be expandle
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  # --------------------------------------------------------------
+  # enable grids -------------------------------------------------
+  - md_in_html
+  # --------------------------------------------------------------
+  # definition and task lists ------------------------------------
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  # --------------------------------------------------------------
 
 nav:
   - Home: index.md
-  - Tags: tags.md
-  - Blog:
-      - blog/index.md
-      - blog/tags.md
+  - Projects: 
+      - projects/index.md
+      - HomeCinema:
+        - projects/homeCinema/index.md
+        - TV: projects/homeCinema/tv.md
+        - AVR: projects/homeCinema/avr.md
+        - Speakers: projects/homeCinema/speakers.md
+        - Set-Top Box: projects/homeCinema/set-top_box.md
+      - HomeLab:
+        - projects/homeLab/index.md
+        - NAS: projects/homeLab/nas.md
+      - HomeOffice:
+        - projects/homeOffice/index.md
+        - Chairs: projects/homeOffice/chairs.md
+        - Desk: projects/homeOffice/desk.md
+        - PC: projects/homeOffice/pc.md
+  - Blog: 
+    - blog/index.md
+  - About Me: about_william_fuchs.md
+  - Support Me: support_me.md
