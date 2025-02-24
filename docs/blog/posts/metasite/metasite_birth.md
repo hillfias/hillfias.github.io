@@ -438,6 +438,8 @@ To configure everything, you have a bunch of documentation from GitHub [right he
 So, on my side. What did this look like? I have [a file named **CNAME**](https://github.com/hillfias/hillfias.github.io/blob/master/CNAME), which contains one line: `william-fuchs.com`. That was hard. 
 This is a test.
 
+Wait, I'm having some issues with github actions. let me check it real quick.
+
 <!-- acronyms -->
 *[SSG]: Static Site Generator
 *[SSGs]: Static Site Generators
