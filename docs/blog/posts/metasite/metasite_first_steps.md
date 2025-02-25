@@ -21,7 +21,10 @@ status: new
 [We've seen our site born](metasite_birth.md), it is now time to see it take its first steps.
 <!-- more -->
 
-!!! warning
+!!! danger "Draft"
+    This is still a work in progress. I advise waiting for the article to be finished. But it's there. If you're the kind that can't wait. And want a taste of it. It needs a great overhaul since I started writing it before [The Metasite - Birth](metasite_birth.md).
+
+!!! warning "Some notes for myself, for what's left to write here at the beginning"
     - Mkdocs-material, initial readings of the documentation. The frustration with the blog plugin. The philosophy behind the blog definition that I don't like etc.
     - And then, the building of the different pages start, which is what I started describing below :)
     - talk about the table and other features used for the first article. And finally build the support page and finish talking about it.
@@ -33,7 +36,7 @@ After reading most of the documentation, it was time to actually start working o
 Because the documentation is extensive. There's no digesting that in one shot and being able to perfectly recall everything, every configuration, all the markdown extensions etc.  
 
 Anyhow, after playing a bit with the site, imagining how I wanted to organize things, I decided to start very simple.  
-I have one very nice article, that is in big part already written: the QNAP NAS QTS to QuTS Hero migration. Which includes a lot more than that. However, before attracting billions of visitors that will venerate my skills at gleaning information from other competent parties and synthesizing it; I gotta do some groundwork, you know. Like, imagine you were visiting before the [Support Me](/support_william_fuchs.md) existed. You'd be among billions painfully wondering how to give me your money. 
+I have one very nice article, that is in big part already written: the QNAP NAS QTS to QuTS Hero migration. Which includes a lot more than that. However, before attracting billions of visitors that will venerate my skills at gleaning information from other competent parties and synthesizing it; I gotta do some groundwork, you know. Like, imagine you were visiting before the [Support Me](/support_william_fuchs/) existed. You'd be among billions painfully wondering how to give me your money. 
 
 So, I had a home page that was in dire need of editing, since nobody wants to read the defaut mkdocs-material [home page](https://github.com/mkdocs-material/create-blog/blob/main/docs/index.md). I did that laying out my objectives:  
 

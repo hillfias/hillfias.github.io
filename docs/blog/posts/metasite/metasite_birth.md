@@ -378,7 +378,7 @@ This builds just fine by the way. Even the framework's chill with that.
 
 Right. There's an option for _Additional Properties_. You could want to enforce a schema for a certain set of properties while still allowing it be extended after all. So I ++ctrl+shift+p++, type `settings`, and choose `Preferences: Open Settings (UI)`. The UI rather than my JSON configuration file so that I can get all the default options displayed, in case there is anything for that additional properties feature, which I didn't know at the time. I tick the box to disable additional properties and oh god, what's this.
 
-![VScode "PROBLEMS" interface, listing 13 different issues with the YAML file.".](/assets/images/problems.png){ loading=lazy }
+![VScode "PROBLEMS" interface, listing 13 different issues with the YAML file.](/assets/images/problems.png){ loading=lazy }
 /// caption
 ///
 
@@ -422,23 +422,67 @@ Let's recap: you have
 
 Your GitHub action is defined, you're ready to `git push` your files to your repository and watch the magic happen!
 
+Except, this might not be working, right away, or at some point. For example. If you installed a bunch of features, plugins etc... There's one plugin, [the RSS one](https://squidfunk.github.io/mkdocs-material/tutorials/blogs/engage/#rss-feeds), that needs another python package to be installed. This means you need to `pip install mkdocs-rss-plugin` in your local python environment to see it work. And it also means **you need to update your pipeline**! It'll fail because that package is missing and it's now expecting it. So go to your `ci.yml` and add that exact same command:
+
+``` yml
+      - run: pip install mkdocs-material 
+      - run: pip install mkdocs-rss-plugin
+      - run: export PYTHONPATH=. ; mkdocs gh-deploy --force
+```
+
+There you go. Your Actions won't fail anymore. There's one more thing to be wary of: this CI will publish your site to another branch in your repository: **gh-pages**. Under your repository's settings, Pages, Build and deployment, Source, you'll have the choice between deploying your site from a **branch** or **GitHub Actions**. Make sure it's the **former**!! Despite using a GitHub Action to run everything for you every time you commit some code changes, it'll "just" publish the website to the `gh-pages` branch. So you have to tell GitHub to Deploy from a branch, and choose `gh-pages`  `/root`:
+
+![GitHub pages interface, showcasing what was described right above.](/assets/images/github_pages_build.png){ loading=lazy }
+/// caption
+///
+
+You'll also notice in the above picture some extra details about some TLS certificate steps bein processed, and a custom domain name... We'll get there in a second.
+
+You can review all your previous deployments from the Actions tab:
+
+![GitHub Actions interface, showcasing the few pipeline runs (some red, which means there were issues, some green).](/assets/images/github_actions.png){ loading=lazy }
+/// caption
+///
+
 ### Domain Name
 Your site is now online. Birth _technically_ took place. It's online. _However_... Is it really a human being... uhm... I mean... a website... I gotta stop with this analogy... if it doesn't have a name???
 
-Sure, GitHub Pages give you a domain like [yourusername.github.io], which is pretty cool already! But if you want to look real professional, reall good, you have to register a **domain name**.
+Sure, GitHub Pages give you a domain like [yourusername.github.io](), which is pretty cool already! But if you want to look real professional, reall good, you have to register a **domain name**.
 
-I'll skip all the complicated parts about how or why or when or who or where etc. A domain name is going to be like [google.com], or [william-fuchs.com], or whatever you'll come up with! And you want it to take users to your website, which is currently available from the domain name [yourusername.github.io].
+I'll skip all the complicated parts about how or why or when or who or where etc. A domain name is going to be like [google.com](), or [william-fuchs.com](), or whatever you'll come up with! And you want it to take users to your website, which is currently available from the domain name [yourusername.github.io]().
 
-Let's take things one at a time. First you need to buy your domain. There are plenty of sites offering that service. I've read really bad stories about some of them, like godaddy. I'm going to directly recommend the one I picked: you know it!! [Cloudflare](https://www.cloudflare.com/). Why? I trust it. It has excellent reputation. I've read a good number of articles on their site, e.g. [one explaining what DNS is](https://www.cloudflare.com/learning/dns/what-is-dns/), or what [anycast](https://www.cloudflare.com/learning/cdn/glossary/anycast-network/) is. I've seen them everywhere, protecting websites with anti-bot systems (that I have to painfully figure out how to bypass for automation purposes ahaha... But that's another story; and again, I'm just using what other people have developed). They are a CDN, Content Delivery Network, which means they'll be caching your webpages, css, javascript, images etc. to serve them as close and quickly to the end customer as possible. There's a ton more features you'll get with them that I have not even begun to explore!
+Let's take things one at a time. First you need to buy your domain. There are plenty of sites offering that service. I've read really bad stories about some of them, like godaddy. I'm going to directly recommend the one I picked: you know it!! [Cloudflare](https://www.cloudflare.com/). Why? I trust it. It has excellent reputation. I've read a good number of articles on their site, e.g. [one explaining what DNS is](https://www.cloudflare.com/learning/dns/what-is-dns/), or what [anycast](https://www.cloudflare.com/learning/cdn/glossary/anycast-network/) is. I've seen them everywhere, protecting websites with anti-bot systems (that I have to painfully figure out how to bypass for automation purposes ahaha... But that's another story; and again, I'm just using what other people have developed). They are a CDN, Content Delivery Network, which means they'll be caching your webpages, css, javascript, images etc. to serve them as close and quickly to the end customer as possible. There's a ton more features you'll get with them that I have not even begun to explore! Just look at the vertical menu on the left hand-side in the below screenshot; web analytics, Email, Security, Optimization for speed, quick actions!... Don't pay attention to the number of unique visitors and total requests I have on my website; I'm really really famous.
+
+![GitHub pages interface, showcasing what was described right above.](/assets/images/cloudflare_dark.png#only-dark){ loading=lazy }
+![GitHub pages interface, showcasing what was described right above.](/assets/images/cloudflare.png#only-light){ loading=lazy }
+/// caption
+///
+
+!!! tip
+    If you scroll a bit upwards, the header will appear. Next to the search bar, you'll see a button you can toggle. Switch to dark or light themes, you'll see the above screenshot changes based on which theme you have!! Isn't that cool??!
+
 
 This one was an easy choice. The study didn't go far down any rabbit's hole here, I'll tell you that!
 
 To configure everything, you have a bunch of documentation from GitHub [right here](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site). I'm not telling you exactly what to do, because it may vary from what I did. For example, I don't want a site starting with www. But if you do, you might need to slightly adapt. You also have [this post from Cloudflare](https://blog.cloudflare.com/secure-and-fast-github-pages-with-cloudflare/) itself that explains how to set this up, which is perhaps simpler. It also details some configurations which are specific to Cloudflare.
 
 So, on my side. What did this look like? I have [a file named **CNAME**](https://github.com/hillfias/hillfias.github.io/blob/master/CNAME), which contains one line: `william-fuchs.com`. That was hard. 
-This is a test.
 
-Wait, I'm having some issues with github actions. let me check it real quick.
+Now, all the rest has been pretty much said in Cloudflare's blog post linked above: Set the Custom SSL/TLS to Full (not Full(Strict) or Strict - otherwise HTTPS won't be validated), and create a CNAME record from your fancy domain to the one provided by GitHub. In my case, I followed GitHub's articles and directly pointed my fancy domain to the IP addresses of the servers on GitHub's side (as explained in the series of GitHub articles linked above). Make sure to select **DNS only** in the proxy status, rather than the default option **Proxied**, otherwise GitHub will have some difficulties validating the whole thing.
+
+You can also verify your domain, with a challenge thanks to a TXT record; again, explained in their article.
+
+## Conclusions
+As I wrote this article, my ambitions for it grew more and more. I actually started writing what is now a separate article: [The Metasite - First Steps](metasite_first_steps.md). Everything I described above was basically done before this article, in its current form, began. Then I started having fun, by doing a bunch of things I'll later describe (this will transform into a series of articles called "The Metasite", because there's clearly too much for one single article on this!). My priority was creating a [Support Me](/support_william_fuchs/) page, so people can give me a lot of money, so I can buy a house, and a dog (a Husky), and a huge garage for wood working, and metal working, and big ass desk, like, big ass, so I can have my office environment, and next to it some place for painting (I'd like to start painting Warhammers 40K again) and **this money would just be great to start a bunch of projects**. I didn't even mention everything I'll be doing for my HomeLab. Or the crazy desktop PC build I started drafting in a CAD (Computer-Aided Design) software (FreeCAD). All of this costs time, of course, which I freely give away; but also money.
+
+That's why that [Support Me](/support_william_fuchs/) page was a priority. And next in line would have been the [About Me](/about_william_fuchs/), just in case a friend or family member gave you a link to my site and you have no idea who I am. I think it's important to present myself to you.
+
+**BUT**. I wanted to document everything as I went along, so I started documenting what I did for the [Support Me](/support_william_fuchs/) page, because I was starting to play with the CSS and stuff. And then, I had a beautiful study I spend hours on, to choose the SSG!! This was of course part of the to-document plan. As this part grew, I figured I'd just split the two articles. And there will be more. Because, spoiler alert, there are some things I'm really not liking with this framework. There are a lot of things I'm loving with this framework. So I won't change, I'm a bit invested right now. I want to go through all the plugins, all the setups, all the configurations and options etc. together with you guys. That's what we'll explore here. That won't be enough though. I need to make some fundamental changes to the framework to adapt it my needs. This will come later on.
+
+So, what was supposed to quickly get me running with a website where I could finish my post on my NAS migration, is turning into a project that will ask for a lot of time before I find it "satisfactory". When that point will be reached, it will mean it will be very easy for me to write new articles, and solely focus on that and publish them. It will also mean the Metasite series will be finished. Don't expect that to be finished so soon however. I will reprioritize writing the NAS migration article as soon as possible, after the [Support Me](/support_william_fuchs/) page however (which is still a work in progress, but you'll have a link to my Patreon there, and Paypal - and if you didn't click on it already, I'm perhaps being too subtle - wink wink). And the [About Me](/about_william_fuchs/) one.
+
+The reason for this reprioritization is that I really miss my NAS running. It's not running since I started this adventure. For reasons which shall remain a mystery for now.  
+On that note, I will leave you here. Thank you so much for reading until the end. I hope you found it distracting, if not helpful.
 
 <!-- acronyms -->
 *[SSG]: Static Site Generator
