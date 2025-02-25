@@ -26,13 +26,40 @@
     text-align: center;
 }
 
-a[title="Hillfias on Youtube"]:hover {
+a[title="Hillfias on Youtube"]:hover, a[title="Hillfias on Youtube"]:active, a[title="Hillfias on Youtube"]:focus {
     color:#EE0F0F !important;
 }
 
-a[title="Hillfias on Twitch"]:hover {
+a[title="Hillfias on Twitch"]:hover, a[title="Hillfias on Twitch"]:active, a[title="Hillfias on Twitch"]:focus {
     color:#6441a5 !important;
 }
+
+a[title="William Fuchs on LinkedIn"]:hover, a[title="William Fuchs on LinkedIn"]:active, a[title="William Fuchs on LinkedIn"]:focus {
+    color:#0a66c2 !important;
+}
+
+a[title="Hillfias on TikTok"]:hover, a[title="Hillfias on TikTok"]:active, a[title="Hillfias on TikTok"]:focus {
+    /* color:#00f2ea !important; */
+    color:#ff0050 !important;
+}
+
+a[title="Hillfias on Stack Overflow"]:hover, a[title="Hillfias on Stack Overflow"]:active, a[title="Hillfias on Stack Overflow"]:focus {
+    color:#F48024 !important;
+}
+
+a[title="Hillfias on Facebook"]:hover, a[title="Hillfias on Facebook"]:active, a[title="Hillfias on Facebook"]:focus {
+    color:#1778F2 !important;
+}
+
+a[title="Hillfias on Reddit"]:hover, a[title="Hillfias on Reddit"]:active, a[title="Hillfias on Reddit"]:focus {
+    color:#FF5700 !important;
+}
+
+a[title="Hillfias on Instagram"]:hover, a[title="Hillfias on Instagram"]:active, a[title="Hillfias on Instagram"]:focus {
+    color:#C13584 !important;
+}
+
+
 
 .md-button.card:not(.example):hover a, .md-button.card:not(.example):active a {
     color: var(--md-accent-bg-color);

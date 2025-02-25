@@ -87,6 +87,7 @@ extra:
     - icon: fontawesome/brands/x-twitter
       name: Hillfias on X
       link: 
+      id: yoloo # modify template to put id
     - icon: fontawesome/brands/instagram
       name: Hillfias on Instagram
       link:
@@ -107,13 +108,13 @@ extra:
     #   name: Hillfias on Discord
     #   link:
     - icon: fontawesome/brands/stack-overflow
-      name: Hillfias on Stack-Overflow
+      name: Hillfias on Stack Overflow
       link:
     - icon: fontawesome/brands/tiktok
-      name: Hillfias on Stack-Overflow
+      name: Hillfias on TikTok
       link:
     - icon: fontawesome/brands/linkedin
-      name: Hillfias on Stack-Overflow
+      name: William Fuchs on LinkedIn
       link:
     # There's already an easy access to that via some other way
     # - icon: fontawesome/brands/github

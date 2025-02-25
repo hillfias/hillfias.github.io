@@ -45,7 +45,7 @@ There are two articles I'd like to focus on, three actually (four now!! the list
     ---
 
     And finally, I'd like to revamp this home page to properly welcome you, give myself another huge list of tasks to make sure my night job will slow me down on my road to becoming a professional Rocket League player.
-    I started writing the [Support Me](/support_william_fuchs/) page, but it's far from over. I need to make the text more concise, and only two payment options are working right now (Paypal and Patreon).
+    I started writing the [Support Me](support_william_fuchs.md) page, but it's far from over. I need to make the text more concise, and only two payment options are working right now (Paypal and Patreon).
 
     ---
 
