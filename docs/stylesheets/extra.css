@@ -26,36 +26,36 @@
     text-align: center;
 }
 
-a[title="Hillfias on Youtube"]:hover, a[title="Hillfias on Youtube"]:active, a[title="Hillfias on Youtube"]:focus {
+a#hillfias_youtube:hover, a#hillfias_youtube:active, a#hillfias_youtube:focus {
     color:#EE0F0F !important;
 }
 
-a[title="Hillfias on Twitch"]:hover, a[title="Hillfias on Twitch"]:active, a[title="Hillfias on Twitch"]:focus {
+a#hillfias_twitch:hover, a#hillfias_twitch:active, a#hillfias_twitch:focus {
     color:#6441a5 !important;
 }
 
-a[title="William Fuchs on LinkedIn"]:hover, a[title="William Fuchs on LinkedIn"]:active, a[title="William Fuchs on LinkedIn"]:focus {
+a#hillfias_linkedin:hover, a#hillfias_linkedin:active, a#hillfias_linkedin:focus {
     color:#0a66c2 !important;
 }
 
-a[title="Hillfias on TikTok"]:hover, a[title="Hillfias on TikTok"]:active, a[title="Hillfias on TikTok"]:focus {
+a#hillfias_tiktok:hover, a#hillfias_tiktok:active, a#hillfias_tiktok:focus {
     /* color:#00f2ea !important; */
     color:#ff0050 !important;
 }
 
-a[title="Hillfias on Stack Overflow"]:hover, a[title="Hillfias on Stack Overflow"]:active, a[title="Hillfias on Stack Overflow"]:focus {
+a#hillfias_so:hover, a#hillfias_so:active, a#hillfias_so:focus {
     color:#F48024 !important;
 }
 
-a[title="Hillfias on Facebook"]:hover, a[title="Hillfias on Facebook"]:active, a[title="Hillfias on Facebook"]:focus {
+a#hillfias_facebook:hover, a#hillfias_facebook:active, a#hillfias_facebook:focus {
     color:#1778F2 !important;
 }
 
-a[title="Hillfias on Reddit"]:hover, a[title="Hillfias on Reddit"]:active, a[title="Hillfias on Reddit"]:focus {
+a#hillfias_reddit:hover, a#hillfias_reddit:active, a#hillfias_reddit:focus {
     color:#FF5700 !important;
 }
 
-a[title="Hillfias on Instagram"]:hover, a[title="Hillfias on Instagram"]:active, a[title="Hillfias on Instagram"]:focus {
+a#hillfias_instagram:hover, a#hillfias_instagram:active, a#hillfias_instagram:focus {
     color:#C13584 !important;
 }
 

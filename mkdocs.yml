@@ -10,7 +10,7 @@ theme:
     # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
       toggle:
-        icon: material/link
+        icon: material/lightbulb-night
         name: Switch to light mode
 
     # Palette toggle for light mode
@@ -19,7 +19,7 @@ theme:
       primary: blue
       accent: teal
       toggle:
-        icon: material/toggle-switch
+        icon: octicons/sun-16
         name: Switch to dark mode
 
     # Palette toggle for dark mode
@@ -28,7 +28,7 @@ theme:
       primary: black
       accent: teal
       toggle:
-        icon: material/toggle-switch-off-outline
+        icon: material/weather-night
         name: Switch to system preference
 
   features:
@@ -87,22 +87,27 @@ extra:
     - icon: fontawesome/brands/x-twitter
       name: Hillfias on X
       link: 
-      id: yoloo # modify template to put id
+      id: hillfias_x # modify template to put id
     - icon: fontawesome/brands/instagram
       name: Hillfias on Instagram
       link:
+      id: hillfias_instagram
     - icon: fontawesome/brands/reddit
       name: Hillfias on Reddit
       link:
+      id: hillfias_reddit
     - icon: fontawesome/brands/facebook
       name: Hillfias on Facebook
       link:
+      id: hillfias_facebook
     - icon: fontawesome/brands/twitch
       name: Hillfias on Twitch
       link:
+      id: hillfias_twitch
     - icon: fontawesome/brands/youtube
       name: Hillfias on Youtube
       link:
+      id: hillfias_youtube
     # For Patrons :)
     # - icon: fontawesome/brands/discord
     #   name: Hillfias on Discord
@@ -110,12 +115,15 @@ extra:
     - icon: fontawesome/brands/stack-overflow
       name: Hillfias on Stack Overflow
       link:
+      id: hillfias_so
     - icon: fontawesome/brands/tiktok
       name: Hillfias on TikTok
       link:
+      id: hillfias_tiktok
     - icon: fontawesome/brands/linkedin
       name: William Fuchs on LinkedIn
       link:
+      id: hillfias_linkedin
     # There's already an easy access to that via some other way
     # - icon: fontawesome/brands/github
     #   name: Hillfias on Stack-Overflow
