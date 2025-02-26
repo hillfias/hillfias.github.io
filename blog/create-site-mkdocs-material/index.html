@@ -1,0 +1,2189 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="This article treats about my endeavors as I delve into the world of Static Site Generators, and more specifically, mkdocs-material.">
+      
+      
+      
+        <link rel="canonical" href="https://william-fuchs.com/blog/create-site-mkdocs-material/">
+      
+      
+      
+        <link rel="next" href="../mkdocs-material-first-steps/">
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.5">
+    
+    
+      
+        <title>The Metasite - Birth - Boundless Adventures</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+  
+  
+    
+    
+      
+    
+    
+  
+    
+    
+      
+    
+    
+  
+    
+    
+      
+    
+    
+  
+  
+  <style>.md-tag.md-tag--html{--md-tag-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="m0 32 34.9 395.8L191.5 480l157.6-52.2L384 32zm308.2 127.9H124.4l4.1 49.4h175.6l-13.6 148.4-97.9 27v.3h-1.1l-98.7-27.3-6-75.8h47.7L138 320l53.5 14.5 53.7-14.5 6-62.2H84.3L71.5 112.2h241.1z"/></svg>');}.md-tag.md-tag--js{--md-tag-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M0 32v448h448V32zm243.8 349.4c0 43.6-25.6 63.5-62.9 63.5-33.7 0-53.2-17.4-63.2-38.5l34.3-20.7c6.6 11.7 12.6 21.6 27.1 21.6 13.8 0 22.6-5.4 22.6-26.5V237.7h42.1zm99.6 63.5c-39.1 0-64.4-18.6-76.7-43l34.3-19.8c9 14.7 20.8 25.6 41.5 25.6 17.4 0 28.6-8.7 28.6-20.8 0-14.4-11.4-19.5-30.7-28l-10.5-4.5c-30.4-12.9-50.5-29.2-50.5-63.5 0-31.6 24.1-55.6 61.6-55.6 26.8 0 46 9.3 59.8 33.7L368 290c-7.2-12.9-15-18-27.1-18-12.3 0-20.1 7.8-20.1 18 0 12.6 7.8 17.7 25.9 25.6l10.5 4.5c35.8 15.3 55.9 31 55.9 66.2 0 37.8-29.8 58.6-69.7 58.6"/></svg>');}.md-tag.md-tag--css{--md-tag-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="m480 32-64 368-223.3 80L0 400l19.6-94.8h82l-8 40.6L210 390.2l134.1-44.4 18.8-97.1H29.5l16-82h333.7l10.5-52.7H56.3l16.3-82z"/></svg>');}</style>
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#the-metasite-birth" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+              <button class="md-banner__button md-icon" aria-label="Don't show this again">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+              </button>
+            
+            
+  Annoucement! There is currently only one article up on the site: <a href="/blog/create-site-mkdocs-material/">The Metasite - Birth</a>. This site is brand new and still heavily under construction. The rest of the structure is eye-candy, and hopefully will make you want to come back. I'm grateful for your visit.
+
+          </div>
+          
+            <script>var el=document.querySelector("[data-md-component=announce]");if(el){var content=el.querySelector(".md-typeset");__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0)}</script>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Boundless Adventures" class="md-header__button md-logo" aria-label="Boundless Adventures" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Boundless Adventures
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              The Metasite - Birth
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H6zm7-4.68V17c0 .55-.45 1-1 1H6c-.55 0-1-.45-1-1v-2.26C3.19 13.47 2 11.38 2 9c0-3.87 3.13-7 7-7 1.65 0 3.16.57 4.35 1.5C10.8 4.57 9 7.07 9 10c0 2.79 1.64 5.19 4 6.32m7.92-6.38-1.42-.91-1.4.97.4-1.65-1.33-1.03 1.68-.11.56-1.61.63 1.58 1.68.04-1.3 1.08zM19.39 13c-1.89 2.27-5.36 2.19-7.17-.05C10 10.13 11.56 6 15 5.34c.34-.05.64.29.5.63-.45 1.28-.38 2.74.35 4a4.62 4.62 0 0 0 3.27 2.28c.35.05.5.49.27.75"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8m0-1.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5m5.657-8.157a.75.75 0 0 1 0 1.061l-1.061 1.06a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734l1.06-1.06a.75.75 0 0 1 1.06 0Zm-9.193 9.193a.75.75 0 0 1 0 1.06l-1.06 1.061a.75.75 0 1 1-1.061-1.06l1.06-1.061a.75.75 0 0 1 1.061 0M8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0M3 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 3 8m13 0a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 16 8m-8 5a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 8 13m3.536-1.464a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.06 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061M2.343 2.343a.75.75 0 0 1 1.061 0l1.06 1.061a.75.75 0 0 1-.018 1.042.75.75 0 0 1-1.042.018l-1.06-1.06a.75.75 0 0 1 0-1.06Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="teal"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../projects/" class="md-tabs__link">
+          
+  
+    
+  
+  Projects
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+    
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../about_william_fuchs/" class="md-tabs__link">
+        
+  
+    
+  
+  About Me
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../support_william_fuchs/" class="md-tabs__link">
+        
+  
+    
+  
+  Support Me
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Boundless Adventures" class="md-nav__button md-logo" aria-label="Boundless Adventures" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Boundless Adventures
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../projects/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Projects
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Projects
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../projects/homeCinema/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    HomeCinema
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            HomeCinema
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/homeCinema/tv.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TV
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/homeCinema/avr.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AVR
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/homeCinema/speakers.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Speakers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/homeCinema/set-top_box.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Set-Top Box
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../projects/homeLab/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    HomeLab
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            HomeLab
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/homeLab/nas.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NAS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../projects/homeOffice/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    HomeOffice
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            HomeOffice
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/homeOffice/chairs.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chairs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/homeOffice/desk.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Desk
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/homeOffice/pc.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Blog
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Archive
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2025/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    February 2025
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Categories
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/metasite/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Metasite
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about_william_fuchs/" class="md-nav__link">
+        
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m23 11.5-3.05-1.13c-.26-1.15-.91-1.81-.91-1.81a4.19 4.19 0 0 0-5.93 0l-1.48 1.48L5 3c-1 4 0 8 2.45 11.22L2 19.5s8.89 2 14.07-2.05c2.76-2.16 3.38-3.42 3.77-4.75zm-5.29.22c-.39.39-1.03.39-1.42 0a.996.996 0 0 1 0-1.41c.39-.39 1.03-.39 1.42 0s.39 1.02 0 1.41"/></svg>
+  
+  <span class="md-ellipsis">
+    About Me
+    
+      <br>
+      <small>Nullam urna elit, malesuada eget finibus ut, ac tortor</small>
+    
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--new"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../support_william_fuchs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Support Me
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2025-02-14 00:00:00+00:00" class="md-ellipsis">February 14, 2025</time>
+                      </div>
+                    </li>
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 13h1.5v2.82l2.44 1.41-.75 1.3L15 16.69zm4-5H5v11h4.67c-.43-.91-.67-1.93-.67-3a7 7 0 0 1 7-7c1.07 0 2.09.24 3 .67zM5 21a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h1V1h2v2h8V1h2v2h1a2 2 0 0 1 2 2v6.1c1.24 1.26 2 2.99 2 4.9a7 7 0 0 1-7 7c-1.91 0-3.64-.76-4.9-2zm11-9.85A4.85 4.85 0 0 0 11.15 16c0 2.68 2.17 4.85 4.85 4.85A4.85 4.85 0 0 0 20.85 16c0-2.68-2.17-4.85-4.85-4.85"/></svg>
+                          <time datetime="2025-02-23 00:00:00+00:00" class="md-ellipsis">February 23, 2025</time>
+                        </div>
+                      </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
+                          <span class="md-ellipsis">
+                            in
+                            
+                              <a href="../category/metasite/">Metasite</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              47 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
+          
+            
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#whats-meta-are-we-talking-about-facebook" class="md-nav__link">
+    <span class="md-ellipsis">
+      What's Meta? Are we talking about Facebook?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What's Meta? Are we talking about Facebook?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-scare-away-most-readers-101" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to scare away most readers 101
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metasite" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metasite
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#origin-story" class="md-nav__link">
+    <span class="md-ellipsis">
+      Origin Story
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#motivation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Motivation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-i-build-this" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do I build this?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How do I build this?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requirements-ssg" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requirements &amp; SSG
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#markup-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      Markup Language
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssg" class="md-nav__link">
+    <span class="md-ellipsis">
+      SSG
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SSG">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ssgs-and-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      SSGs and Criteria
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-did-i-choose-my-ssg" class="md-nav__link">
+    <span class="md-ellipsis">
+      How did I choose my SSG?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#boilerplate-hosting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Boilerplate &amp; Hosting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Boilerplate & Hosting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hosting-platforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hosting Platforms
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-up-the-boilerplate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting up the boilerplate
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deployment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#domain-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      Domain Name
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusions
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
+
+
+  <nav class="md-tags" >
+    
+      
+      
+        
+        
+      
+      
+        <a href="../tags/#tag:meta" class="md-tag md-tag-icon">meta</a>
+      
+    
+      
+      
+        
+        
+      
+      
+        <a href="../tags/#tag:mkdocs-material" class="md-tag md-tag-icon">mkdocs-material</a>
+      
+    
+      
+      
+        
+        
+      
+      
+        <a href="../tags/#tag:site" class="md-tag md-tag-icon">site</a>
+      
+    
+      
+      
+        
+        
+      
+      
+        <a href="../tags/#tag:vscode" class="md-tag md-tag-icon">vscode</a>
+      
+    
+      
+      
+        
+        
+      
+      
+        <a href="../tags/#tag:yaml" class="md-tag md-tag-icon">yaml</a>
+      
+    
+  </nav>
+
+
+
+<h1 id="the-metasite-birth">The Metasite - Birth</h1>
+<p>First article of the Metasite, this is exciting. But what the heck is a Metasite?</p>
+<!-- more -->
+
+<h2 id="whats-meta-are-we-talking-about-facebook">What's Meta? Are we talking about Facebook?</h2>
+<h3 id="how-to-scare-away-most-readers-101">How to scare away most readers 101</h3>
+<p>As my high-school philosophy teacher taught me, you must always start by defining your terms.</p>
+<p>Yep, just so you know I'm a pedantic motherfucker; that's where I choose to start. It's my site! I do what I want!<br />
+(ok, ok, you can just skip ahead if you're not awesome... no one will know...)</p>
+<p>Metaphysics is the physics of physics. It's closer to philosophy in its nature, because it's a conversation about what physics could give rise to the physics we know. Physics that describe physics. It's completely out of our realm. I would say this is a subset of philosophy, that had intercourse with theology. I like it a lot. </p>
+<p>Metadata is the data of data. It's data that describes data. When was that data created? Updated? By whom? With what associated privileges? What's its size? (oh! <img alt="🫢" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1fae2.svg" title=":face_with_open_eyes_and_hand_over_mouth:" /> )</p>
+<p>The metagame, often just called the <em>meta</em> is the game of the game. It's the game you play that's outside the game, strictly speaking, to analyze how the game should best be played. The metagame is about optimization, it's about research, it's about trial and error, statistical analysis, it's about coming up with strategies to <strong>play</strong> the <em>game</em>. And that's a game in itself, right?</p>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Uhm... Like... Couldn't you have just given the dictionary definition?</p>
+</div>
+<p><em>Referring to itself or to the conventions of its genre; self-referential.</em> There! You happy?! You don't like my examples? Huh?<br />
+Ok, you won. One more. Metamovies. Or shows etc. That's really fashionable these days. When we say "<em>Oh wow, this is getting meta!</em>" in the context of a movie, we don't mean the movie is talking about movies, or how to create them.<br />
+What's often meant is that a step back was taken, far from the movie, or the scenario. And the character can just say "<em>Hey! That's not in the script!"</em> - <strong>That's <em>meta</em></strong>. It's as if something in the movie, happens outside the boundaries of the movie itself. The most usual example is "breaking the fourth wall", with characters directly talking to the audience. Ryan Reynolds, especially in Deadpool, is a very meta character. Or actor. I don't know anymore.  </p>
+<p>However, more interesting meta can be seen in fucked up delusions like <a href="https://www.imdb.com/title/tt10655686/">Rick and Morty's train episode</a>. There, we go. That's free, unleached, raw creativity right there. Man, I love this show.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A list of examples isn't a definition ya know... Like, give me a TL;DR next time, 'k?</p>
+</div>
+<p>Hey, hey, hey, look who's being an asshole now!<br />
+(I have a multiple personality disorder, I'm just playing with myself - whoops <img alt="🫢" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1fae2.svg" title=":face_with_open_eyes_and_hand_over_mouth:" /> - don't mind me)<br />
+(also: do mind people that confuse multiple personality disorder with schyzophrenia. Mind those people. They might be dangerous.)</p>
+<h3 id="metasite">Metasite</h3>
+<p>This site. Is a <em>Site</em>. (or is it? haha just kidding) About my <strong>site</strong>.
+Through this site, I'd like to explore the birth of my site. Where the idea of creating a site originated, how it matured, how that idea was nurtured. And the trigger.</p>
+<p>I'd also like to take you with me on an adventure. A technical adventure. Or and adventure of self-reflection, at times. Or just some more delirious non-sensical me. Often.<br />
+By technical (yeah, let's just ignore the rest) I mean that this Metasite has the objectibe of describing how this site was <em>technically</em> created.<br />
+Ho yeah baby. You said it. We're gonna see some code samples. Ho yeah baby.</p>
+<p>We're going to be talking <abbr title="Static Site Generators">SSGs</abbr>, and more specifically, <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a>.<br />
+You'll see that there's a bunch I love, and some things I really have an issue with. Which means we're going to do some coding in the opensource framework; there won't be going around that.</p>
+<p>Before we get to that point in the story, let's take it back a notch, shall we? How did I get to creating a site? What pushed me?<br />
+This is the site's</p>
+<h2 id="origin-story">Origin Story</h2>
+<p>To really understand my motivation, I guess we could take it back 18 years ago, when I first started programming in HTML and CSS.<br />
+We're not going to really do that though, this isn't a memoire lol.  </p>
+<p>However it's important to know that I've always had a lot of ideas, a lot of projects, both in the IT world with a bunch of cool apps I would have loved to develop, and outside of IT. Like, learning Japanese. I've trying to do that since 14 years old, something like this. Trying. Because I'm not really learning anything. It's all on and off; little sprints of motivations, sparks of light, here and there. Another <em>project</em>, if we were to define any hobby or objective as such, is learning how to play the guitar. Same shit as Japanese. What about all my ideas for apps you might ask? Well, I developed them. I developed <em>the ideas</em>. And after a bit of coding, seeing what I could do in a few hours, a few days, or weeks. I realized that my ideas, which I continue to develop, would take me years to fully implement.</p>
+<p>That's the real issue. The sheer amount of time and dedication it takes to just <em>get results</em>. If one is too focused on the results part, they won't reach those results. Because one has to focus on the process.<br />
+You don't become a body-builder by wishing you had big muscles. You become a body-builder by <em>building</em>. Your muscles. Over and over. Day in and day out. Until you reach your goals. Then you set more goals.<br />
+<strong>The Process</strong>.</p>
+<p>I'm a lazy fuck. And I compare myself to much better people than me, in whatever field I'm pursuing. I get easily discouraged. Or perhaps, in not so negative terms, my enthusiasm for so much subjects, arts, domains, spreads my motivation too thin to fully dedicate myself to any of them.</p>
+<p>Do note that this is a way of viewing myself in a negative light, which is fuel I burn to propel myself to the heights I'm aiming for. There's plenty I did. If not on my personal objectives, I'm lucky to be really motivated (perhaps too invested at times, which can backfire) in my career, and getting rewarded for it. All the bosses I've had were delighted with my work. I take pride in the work I've done.  </p>
+<p><em>Buuuut</em>, my personal objectives aren't fulfilled. The first point was about the process, and motivation, and the numerous passions I have spreading me too thin. There's another component however: <strong>compensation</strong>.<br />
+No, not financial compensation. Neurochemical compensation. I expect rewards for my efforts. I expect dopamine, otherwise I will no push further. That mindset has lead me to fail when I started streaming. I had a Twitch set up, a Youtube set up, I streamed some games of League of Legends. Nobody watched. Sometimes one or two anonymous viewers, which means no chat interactions. I still had a lot of fun doing it, because I generally don't play alone. I play with friends. But the aspect of streaming that makes it worth streaming, is streaming for people, and interacting with them. Which is why I stopped doing that.  </p>
+<p>We can now fast-forward to 2024. The year of change. My life changed quite a bit, for the better. And today, in 2025, I have a lot of objectives that I wish to realize, one month at a time. This asks for motivation, which I do have, and a solid mindset, which I believe I also have now. I'll do a separate entry for my 2025 objectives, which are more fit for a <em>blog</em> site. Ya know. Where someone says random shit about his life nobody gives a fuck about. Oh shit, that's kinda what I'm doing here as well, I have to be careful and give you some nice bits at some point. </p>
+<p>Back to 2024. Back to way before that. I've written a bit in my life. First of all, I really enjoy typing on my keyboard. Really. And I'll do a whole article on keyboards and layouts, and a video (that's the objective at least!). I've written some small essays, poetry, self-introspection stuff at key points in my life... What I enjoy most though, is reading technical things. That's basically what I do all the time. I am constantly learning. In IT, I believe that's the case for everyone. And I've surprised myself last year.</p>
+<p>I attended an event where I heard multiple talks about different IT related topics, different technologies, processes etc. One of those talks was about writing documentation, something I did as part of my work, and kind of got famous for (I wrote a piece of art technical documenation, not long before, perhaps 2023). That talk presented some tools for just that - Antora with Asciidoc. Which I'm not using today. Yet? Haha.  </p>
+<p>Oh, small detour. This reminds me that this was a subject I had explored before when starting one of my projects that I thought I would actually go through with. I started writing some code. But I need to put in place all the necessary tests, all the different kind of tests, to make sure everything is perfect. And I need a CI/CD so all the tests run automatically. I looked into GitLab. And I need a way to write technical documentation in a versioned way, just like code - documentation as code - because I forget everything! I need to write down my processes and what I do. Thankfully GitLab had an option - Wiki. And this, and that, and more and more surrounding objectives to get a fully functional enterprise-level pipeline to deliver code. I stopped the project, overwhelmed by all I would have to put in place. But I already had this idea of writing doc as code.</p>
+<p>Back to 2024 with that event. I attended for free as part of my job. The trade was that I'd write a few lines to "give back". And those few lines transformed into more lines. Before I knew it, I was writing a full-fledged article, that is still not finished eight months later, but already estimated at 90min read. I surprised myself, because I both really enjoyed the process of writing, of researching for what I wrote when I didn't know something. Most of all, I was surprised to see how well I could enrich the talks I attended with the personal knowledge I'd gleaned over the years on different topics. I'm really happy about this piece I'm currently still writing!</p>
+<p>That's kind of where it all started. I think this was a sort of trigger. It built up from the documentation I wrote a bit before. And all of this is now catalyzing all those ideas and projects and ambitions I've had since I was a kid! It takes time, but I enjoy it, so why not take the time to actually start building everything I ever wanted to build?  </p>
+<p>The <em>actual trigger</em> wasn't that though. The <strong>actual trigger</strong> that made me go "Ok, I'm building a site" is when I asked for help on Reddit regarding the migration of my QNAP NAS from QTS to QuTS Hero. I started writing a lot. This wasn't for work. I was writing an entire technical story of all the hurdles I faced. And then a clarification on ZFS, on ECC RAM, on deduplication... and basically a synthesis on all I read about when I fell into that migration rabbit hole. Except - <strong><em>fucking</em></strong> - Reddit made me retype some edits to my posts (yes, I was editing my post every night, not publishing something finished. My big bro didn't understand, he thinks I'm crazy), because hitting the save button just lost everything I typed!! This happened multiple times!! But I persevered, until a point where my edits just wouldn't work anymore. Maybe there's a secret hidden character limit or something. I tried for an entire evening different combinations of texts to see if there was a word triggering a filter that would reject my edit or something... Nothing.  </p>
+<p>Extremely frustrated, I hinted at that super quickly while at work. A colleague laughed and asked "Why don't you start a site?"</p>
+<h2 id="motivation">Motivation</h2>
+<p>Now you might be wondering: "So you're starting a site... to get one article online?"<br />
+Yes!<br />
+No...<br />
+But yeah, essentially. Except that with that, once everything is set up, I can put more articles online. I can finally build a place, a "second brain" as I hear so often, to properly organize not only my thoughts, but also serve as a repository of all the knowledge and explorations I've done. Merging my thoughts with the links and sources that I summarized, with the websites, and books, and articles, and blogposts, and videos, and courses. Building a "second brain"; since I tend to forget things right after the task is done and conclusions have been reached. Moreover, having this online allows other people to benefit from the studies I do, from the fall I experience when I see a beautiful rabbit hole I do not hesitate to jump into.</p>
+<p>You can see how this is building a great positive feedback loop. First of all, it incorporates "world checks". If I share what I do, hopefully I get feedback; which I can incorporate into my reflexions, my way of building knowledge and structuring it, but also ammend previous knowledge structures, enriching them thanks to people's feedbacks. It also avoids what I'd call "self-cannibalization". I coined that term during a depression; I've been depressed a lot in my life. I'm doing much better now. I'm fully healed. That term was meant to indicate what happens when you're alone with your thoughts with no inputs from the outside world: your thoughts start eating you. You "self-cannibalize". I guess we could use it derivatively for when you're alone with ideas that you nurture disconnected from the outside world. Or even when you are connected to the outside world, but just a small part of it, that reinforces your idea(s), without really adding anything, or substracting. Just reinforcement. That's the "echo chamber". That's the issue polarizing our society right now.</p>
+<p>Opening a "site", rather, creating a website, is a way to open up about my projects, how to achieve my goals etc. And doing so in an open manner will allow me to learn from others thanks to their feedback. It's a positive feedback loop! We're in such a great place right now. Aren't you happy you're here? I'm happy you're here. You know, it's funny. Because we're not in the same room, at the same time. You could be on Mars, 256 years from now. We're completely disconnected, both spatially, and temporaly. There's a finite amount of space-time disconnecting our subjective cognitive experiences of "now". Yet, we're both here. You and me. In the same place, at the same time.</p>
+<p>I drifted away there for a sec; sorry if you started tearing up. Back to the motivation for creating this website. You understood that it's an open door on the world, from my brain to your brains, and back into my brain. That it's a way of giving back and teaching all that I've learned over the years, and continue to learn, and explore. But it's also a way to connect, to socialize, to create a community, to have fun together (since I intend on streaming video games); but most of all: to find like-minded people. People that are intelligent, respectful, curious. That critize ideas, and have the audacity to critize themselves. Beautiful people.</p>
+<p>There is one last reason, certainly not the least: accountability. I like viewing events as sums of energy. You know how when you invite a friend over, nothing planned, you didn't clean, you have no idea what you'll eat; nothing, you just invite a friend over, and you have fun. Those are great times. However, when you put more energy into thinking about the event, planifying it, which generally is only for events with more than two people, naturally (I'm thinking big parties / weddings), there's a lot of positive energy that comes out of the event. I like to think of emergence here. I like to imagine that such big events have a net positive energy outcome. That people get out more than what they've put in. That the sum of the energies used to come to the event, and to plan it, is exceeded by how happy people feel after the wedding / party. It's worth it. And I'm saying a lot of people, but if you're just your partner and yourself (yeah, in French we put ourselves after others, that's called being polite. We don't say "me and my partner", we say "my partner and I" - cultural shock ahaha), and you've put a lot of effort into organizing a nice evening, or planning a trip or whatever, it <em>should</em> yield very nice memories. Unless your partner likes drama and fighting all the time. And you're retarded so you plan activities she won't actually appreciate. Otherwise it should yield very nice memories!!</p>
+<p><strong>Accountability</strong>. By starting this, I'm pushing one gear. And you guys are going to push all the other gears. This is going to push the machine forward. Once started, there's no going "eh; I'm too lazy, I'll just stop now". That unconcious thought that creeps in as you consciously tell yourself you'll "do this later". No, no, no. No sir (I'm talking to myself, I'm a <em>sir</em>, don't feel offended)! The great I initially pushed is now pushed by entire set of gears that keep it in motion; keeping the energy I need to put in, of course, in check. Because everything falls apart if I'm not pushing that gear myself. What I'm trying to say is that <strong><em>you</em></strong> will help me drive my projects home. <strong><em>You</em></strong> will help me keep motivated, engaged. <strong><em>You</em></strong> will make me accountable for what I do, in the sense that no projects should go unfinished. Nobody watching me stream? That's ok. It will come. Enjoy the process, enjoy the stream, enjoy making videos, enjoy learning, enjoy writing, enjoy writing scripts, enjoy the process. Give, for free, to the community. Find the people that appreciate what you do, reach out to them; attract them to your little corner of the internet, to your world, to your <em>community</em>. Talk, exchange, socialize. Feed the mind. Good vibes, people!! Aren't you loving this so far? I'm seeing a bright future ahead.</p>
+<h2 id="how-do-i-build-this">How do I build this?</h2>
+<h3 id="requirements-ssg">Requirements &amp; <abbr title="Static Site Generator">SSG</abbr></h3>
+<p>First off, what's "<em>this</em>"? What do I want to build? That's called <strong>requirements</strong>.<br />
+Following the very simple reddit incident, my initial requirements were <em>extremely</em> simple. I want something dead simple, a repository of documents. It doesn't need to be a fancy dynamic full-fledged web-application, with a newsletter system, and a shoutbox, a forum, a comment system, a member and login system (obviously) etc. No. I want something as frictionless as possible that allows me to put my document online so anyone can view it.</p>
+<p>As opposed to dynamic websites, this is called a static website. On top of that, my initial requirements were similar to the simplicity I had on Reddit: being able to put something in bold, italic, put a title, different headers; add a link... I immediately thought Markdown. If you don't know what that is, it's basically like a "programming language", not unlike HTML (which is what is used to render web pages in a browser, supplemented by CSS and often-times JavaScript of course). It's a "<em>markup language for creating formatted text</em>". So when you write your text, if you use underscores, it'll appear in bold, or a double * and it'll be bold: <code class="language-markdown highlight"><span class="ge">_This_</span> is so <span class="gs">**cool**</span>!!</code> will give "<em>This</em> is so <strong>cool</strong>!!".</p>
+<p>It's really simple and allows doing very simple things. Exactly what I was looking for. Basically what you'd get from a Word document. </p>
+<p>From there, I quickly connected the dots with that talk I assisted to in 2024 regarding Antora and Asciidoc (because I actually regularly see that title in the long list of articles I'm writing to recap all the talks I assisted to; and this one was in my todo list, so I was reminded of it every time I had the opportunity to work on that). The rabbit hole opens, the study begins, welcome to <abbr title="Static Site Generators">SSGs</abbr>.</p>
+<p>A Static Site Generator, or <abbr title="Static Site Generator">SSG</abbr>, is a framework that handles a lot of heavy lifting to provide some nice features. All I wanted was to host this simple text, this simple article for my NAS migration. But the idea of creating a site lead to the idea of a growing website, not a site, to host a lot more than a site post. <abbr title="Static Site Generators">SSGs</abbr> are very often used in the world of technical documentation, on programming libraries, IT products, specifying their interfaces etc. This brings along a lot of nice features that I didn't know I needed: code blocks, syntax highlighting and much much more.</p>
+<p>Here's the synthesis report (which is much nicer than the very plain word "summary", you'll agree I'm sure) of my study, and I'm not doing anything great or inventive or novel in my "studies". All I ever do is glean information on the internet, and synthesize it, i.e. summarize it. Let's take two more seconds on synthesis, which is often used with the definition of <em>producing a substance by means of chemical or biological reactions</em>. However, it also means <em>to put separate facts together to form a single piece of work</em>. Enough with the pedantic stuff (English isn't everyone's native language!... Or maybe I just love metalanguage conversations - and I could take you on an adventure, an exploration of how <em>synthesis</em> came to both symbolize the creation of substances, chemical, biological, by assembling, making simpler component react; as well as the creation of ideas, texts, reports, assembling, or putting forth "reactions" between different facts, words, extracted from perhaps far-away fields / domain knowledge... But we're not going on that adventure).</p>
+<p>So, I was saying. I synthesized a study on <abbr title="Static Site Generators">SSGs</abbr>, mostly based on a lot of reading on Reddit, and Y Combinator (HackerNews) to see the different products, who actually uses them, and what they think of it. I based the structure of my study on Dewan Ahmed's article on <a href="https://www.dewanahmed.com/markdown-asciidoc-restructuredtext/">docs-as-code</a> (I won't put all the sources regardinge all the different Reddit threads I read, but this article definitely deserves a mention). Before diving it, one more <em>essential requirement</em> I had was that this all needs to be free. And <strong>opensource</strong>. I love opensource. You can just code to get the feature you're missing. Isn't that cool? You don't need to open a ticket and never get your feature because it's at the bottom of the bucketlist of the company maintaining some proprietary software you're using. Because you're feature is stupid simple, it'd take 5min to implement, and <em>nobody cares</em>. That's why it's not a priority. They ain't gonna make dem dollars on that bitch, if you catch my drift.</p>
+<p>Opensource? You miss something, go ahead and tinker away you lovely Sunday tinkerer. No need to be an expert, no need to be a very experienced senior Software Engineer, specialized in search algorithms and optimization techniques for getting from <span class="arithmatex">\(O(n^2)\)</span> to <span class="arithmatex">\(O(n)\)</span>. Nope. Just take your time, read a bit, do your research, see what does what, get familiar with the libs... Or if you simply want to change the font, tweak that single word in the code! Man opensource is the best. Why are we still on closed source... Ah, yes. Money. Greed. All that. Everything I'll do here will be free, and add-free, and opensource by the way. In exchange I'll beg for money with a page dedicated to that. We'll that later. Back to the <abbr title="Static Site Generator">SSG</abbr> study.</p>
+<p>Basically, there are two separate components to this study. Three actually, with the deployment and hosting.</p>
+<h3 id="markup-language">Markup Language</h3>
+<p>What Markup language do you want to use? There isn't just Markdown!</p>
+<ul>
+<li>
+<p><a href="https://www.markdownguide.org/">Markdown</a> [md] - one of the most popular. But big drawbacks: it's not very well formalized, there are a ton of different <em>flavors</em>, a ton of extensions...  <br />
+Something else I looked at is the support of LaTeX. There's <a href="https://www.readonlychild.com/site/math-latex/">an extension</a> that enables this, so we're good.<br />
+If you don't know LaTeX, it's, as Markdown, or HTML, a markup language. This one has the reputation to enable nice markup of mathematical formulae, which is something I wanted as I expanded my ambitions and ideas of what I could bring to the world through this website. For example, from the mkdocs documentation itself: <em>The homomorphism <span class="arithmatex">\(f\)</span> is injective if and only if its kernel is only the singleton set <span class="arithmatex">\(e_G\)</span>, because otherwise <span class="arithmatex">\(\exists a,b\in G\)</span> with <span class="arithmatex">\(a\neq b\)</span> such that <span class="arithmatex">\(f(a)=f(b)\)</span></em>. Let's see how this fits: <span class="arithmatex">\(\cos x=\sum_{k=0}^{\infty}\frac{(-1)^k}{(2k)!}x^{2k}\)</span>. &lt;-- This is inline! It makes the line-height slightly bigger, naturally, to fit it all in; but nothing shocking.<br />
+Really nice, right?</p>
+</li>
+<li>
+<p><a href="https://mdxjs.com/">MDX</a>: This stands for Markdown + <a href="https://react.dev/learn/writing-markup-with-jsx">JSX</a>. JSX stands for JavaScript XML: it brings JavaScript and HTML together to form <em>components</em>. In the beginning, it was advised to seperate HTML and CSS. Though one could live with the other; it makes sense to separate HTML which takes care of the semantics ("this is a paragraph", "this needs to be emphasized", "this is a line break"...) of a document from how that document is displayed (thanks to Cascading Style Sheets - CSS). Moreover, CSS being its own file means a central place that will affect the style of all elements on all (HTML) pages of the site. Then entered JavaScript. This brought some extra functionnality, some client-side dynamicity in webpages. JavaScript was kept separate, in files that served different small functions. Now that we've entered the modern era, JavaScript is heavily used everywhere, and integral part of modern Frontend Development Frameworks. Pieces of JavaScript will only interact with precise pieces of HTML. This brings us to components. Components are small, self-sufficient, <strong>reusable</strong> javascript/html bits (JSX) that <em>compose</em> your page, e.g. a <em>profile</em> component which takes in some data like a profile picture, name, role in the organization, date that person joined, and transforms that data into a beautiful profile card that you can put anywhere you want on your website by simply calling upon that component and feeding it the raw data.</p>
+<p>MDX brings this power to Markdown. This is naturally more complex than plain markup languages such as Markdown, and requires not only knowledge of JavaScript, but also knowledge of a Frontend Development Framework. This is more reliable, customizable, powerful and brings a greater sense of freedom and control compared to plain Markdown where one would rely on extensions. MDX is ideal for Frontend developers familiar with Angular, React or Vue.</p>
+</li>
+<li>
+<p><a href="https://asciidoc.org/">AsciiDoc</a> [adoc or asc]: Also <a href="https://docs.asciidoctor.org/asciidoc/latest/stem/">supports LaTeX</a>. Contrarily to MD, it's complete, there's no flavor, or need for extensions to bring in support for something inherently missing. <a href="https://docs.asciidoctor.org/asciidoc/latest/asciidoc-vs-markdown/">This comparison</a> makes this point very clear. Markdown is awesome in its simplicity, "<em>your instinct to choose Markdown is good</em>". However portability takes a hit given all the extensions and plugins you end up needing to support a lot of things you might need for your documentation / article / site post (e.g. tables, admonitions). This means that there's often a mix of HTML and even Javascript in MD documents, which is what we'd like to avoid. It's bad, it looks bad, it's really really dirty. You naughty naughty boy. girl. whatever.<br />
+Believe it or not, I'm using MD to write this, presently, and we'll see why (spoiler: no good reason). So this explanation of AsciiDocs' superiority really resonates with me right now.  </p>
+<p>AsciiDoc already has <a href="https://asciidoctor.org/">Asciidoctor</a>, which isn't a full-fledged <abbr title="Static Site Generator">SSG</abbr>, but can already process those documents and convert them to HTML5, or PDF, or formats compatible for reading on e-readers, like EPUB3. Pretty cool kit to have under your belt for free.</p>
+</li>
+<li>
+<p><a href="https://docutils.sourceforge.io/rst.html">reStructuredText</a> [reST or rst]: another markup language, mainly used in the Python (programming language) community (for technical documentation of Python libraries). Similar pros to AsciiDocs compared to Markdown.</p>
+</li>
+</ul>
+<h3 id="ssg"><abbr title="Static Site Generator">SSG</abbr></h3>
+<h4 id="ssgs-and-criteria"><abbr title="Static Site Generators">SSGs</abbr> and Criteria</h4>
+<p>Now that we got a tour of markup languages, we'll take a tour of frameworks. Indeed, just like a web browser is equipped (understand, programmed) to render HTML web pages, you'll need "something" (a framework) to take in your md or adoc or rst documents and transform them into the HTML pages you'll be able to display on your website (this explanation is purposefully simplified).</p>
+<p>If we summarize, based on markup languages:</p>
+<ul>
+<li><em>reST</em>: <strong>Sphinx</strong>.</li>
+<li><em>Asciidoc</em>: <strong>Antora</strong>.</li>
+<li><em>MDX</em>: <strong>Docusaurus</strong>.</li>
+<li><em>Markdown</em>: And then there's a bunch of options for markdown, which has the flaws we know, but the simplicity we love - <strong>Hugo</strong>, <strong>Jekyll</strong>, <strong>VuePress</strong>, <strong>Material for MkDocs</strong>...</li>
+</ul>
+<p>We can extend that list. <a href="https://jamstack.org/generators/">A LOT</a>. That linked website lists 363 different <abbr title="Static Site Generators">SSGs</abbr>. Some of the most popular ones won't even be mentioned here, because they don't fit the requirements of simplicity. For example, Next.js, Nuxt and Gatsby are mentioned in the top 6, but are all wrappers on frontend frameworks (React and Vue). I wouldn't exactly call those <abbr title="Static Site Generators">SSGs</abbr>. The other 3 out of the top 6 were mentioned in my bullet points right above. There are countless others that I did not consider. I mainly based my list on a few threads I've read, which is not representative at all of how popular each <abbr title="Static Site Generator">SSG</abbr> is. I however believe we have a pretty good set of <abbr title="Static Site Generators">SSGs</abbr> to choose from. You'll see there are a few more than what I've mentioned above: one more for MDX - <strong>Nextra</strong>. Another one for a custom Markdown-based markup: <strong>Markdoc</strong>. Another one based on Vue, because I like Vue: The light-weight version of VuePress, <strong>VitePress</strong>. And a few more for plain markdown, that I've randomly heard of, <strong>MdBook</strong>, <strong>11ty</strong> and <strong>Quarto</strong>.</p>
+<p>That last one is a bit of an exception. Quarto is really awesome! It can show dynamic data, graphs, etc. based on Jupyter notebooks (Python). I really like it, which is why it's in this list. But it really doesn't fit the bill of site-type low-complexity webpages I'm looking for. It's not my use-case, but it may be yours; take a look, it's really cool! On to the criteria now, before introducing an awesome table with those contenders side-by-side:</p>
+<ul>
+<li>
+<p><strong>Markup Language</strong>: that's an obvious one. You might already have a preference and want to constrain your decision to those <abbr title="Static Site Generators">SSGs</abbr>. On my side I was still hesitating.</p>
+</li>
+<li>
+<p><strong>Complexity</strong>: this won't appear in the table as it's subjective. Markdown is simpler than anything else. If you need to write very plain documents only. If you already develop with one frontend framework, perhaps continuing with and <abbr title="Static Site Generator">SSG</abbr> based on that framework will be the simplest. Do you need/want to customize your website? You'll need to code. You'll need to use the templating mechanism of the framework. Complexity is the overarching criteria. I'll give you the other ones so you can choose for yourself.
+s</p>
+</li>
+<li>
+<p><strong>Programmed in</strong>: programming language of the framework. We just mentioned it. If you want to develop in the <abbr title="Static Site Generator">SSG</abbr> framework, to customize your website a bit, in case you're the kind to be opinionated and don't like things as they're proposed - or you need to make it your own - or you need / want to tinker - because, hell, it's fun. Programming language is going to influence that quite a bit.</p>
+</li>
+<li>
+<p><strong>Templating</strong>: This is a way to render data in HTML, thanks to a base template. This is what we alluded to a bit earlier, the useful bit that will "transform" your document (md, asc, rst) into and HTML web page to expose to the Internet. Just like the programming language of the framework itself; you won't need to interact with those templates. Thankfully. But you might want to, to tweak a bit the appearance of your site. So if there's one you already know or are more comfortable with...</p>
+</li>
+<li>
+<p><strong>Popularity</strong>: the more popular a framework is, the more active the community, the more people develop new features (it's opensource, remember?!), the more people help each other find solutions or workarounds to common problems, the more tutorials and articles you'll find online, the more plugins, extensions, themes... </p>
+</li>
+<li>
+<p><strong>Based on</strong>: what frontend framework are the <abbr title="Static Site Generator">SSG</abbr> frameworks based on? There are three main frontend frameworks (frameworks used to build UIs for websites - in case you were still missing that part): Angular (Google, free, opensource), React (Facebook, free, opensource - super popular - much more than Angular) and the last arrival Vue (free and opensource as well, of course; but not as well known as the other two - gaining traction - from an ex Google employee). If you're a frontend developer, and you want an <abbr title="Static Site Generator">SSG</abbr> that makes it both simple for you to put documentation online, but also integrates nicely with your existing website in whichever one of these frameworks, this might be an important criteria for you.</p>
+<p>I personally would love to learn more Vue. I started a bit a few years ago but didn't go through (classic). I've done a lot of web dev in my life, but always "<em>vanilla</em>", meaning without the help of any frameworks (Ok, yes, I used JQuery - you got me). Frameworks have evolved so much since then, and take care of so much. I'd really like to learn how to properly build modern UIs and webapps some day. Anyway, in my case, I did not want to deal with that complexity for now.</p>
+</li>
+<li>
+<p><strong>License</strong>:  This would be important based on what you want to do with the framework (e.g. build off of it, and sell that framework as a solution to build websites). If you're only planning on using that framework to publish content, I don't think it matters that much. But have a read at the different licenses, it's always interesting. </p>
+</li>
+<li>
+<p><strong>Themes</strong> &amp; <strong>Showcase</strong>: Enough of all those programming languages and shit, you're not me. Your criteria might differ. The criteria I based my table on might not even be relevant in your usecase. I do hope they are, particularly if you're just getting started in this world. Before closing on the criteria, there's something really important (always the <em>last but not least</em> trick) that I haven't talked about: what is it going to <strong>fucking</strong> look like dude?! Sure, I could do away with the swearing. But what's life without a bit of swearing. It's just a playful way to put emphasis.</p>
+<p>That's where <strong>themes</strong> come in! <abbr title="Static Site Generators">SSGs</abbr> are often tunable, customizable, extendable. People play with them, and based on popularity, you may find you have a lot of different themes at your disposal. <em>Showcase</em> is somewhat similar in that you'll see, very visually, what sort of beautiful websites were built with the given <abbr title="Static Site Generator">SSG</abbr>. However, unlike themes, they're not "available", and perhaps required a lot of tuning, coding etc. </p>
+</li>
+</ul>
+<div class="center-table">
+<table>
+<thead>
+<tr>
+<th>Framework</th>
+<th data-sort-method="number" title="Number of Stars on GitHub Repository">Popularity</th>
+<th>Themes</th>
+<th>Showcase</th>
+<th>License</th>
+<th style="text-align: center;" title="Which Frontend Framework is the SSG based on">Based on</th>
+<th>Programmed in</th>
+<th>Markup Language</th>
+<th>Templating</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://jekyllrb.com/">Jekyll</a></td>
+<td><a href="https://github.com/jekyll/jekyll">49 637</a></td>
+<td><a href="https://jekyllrb.com/docs/themes/">Themes</a></td>
+<td><a href="https://jekyllrb.com/showcase/">Showcase</a></td>
+<td><a href="https://opensource.org/license/mit">MIT</a></td>
+<td style="text-align: center;">-</td>
+<td><a href="https://www.ruby-lang.org/en/">Ruby</a></td>
+<td><a href="https://www.markdownguide.org/">Markdown</a></td>
+<td><a href="https://shopify.github.io/liquid/">Liquid</a></td>
+</tr>
+<tr>
+<td><a href="https://gohugo.io/">Hugo</a></td>
+<td><a href="https://github.com/gohugoio/hugo">78 210</a></td>
+<td><a href="https://themes.gohugo.io/">Themes</a></td>
+<td><a href="https://discourse.gohugo.io/c/showcases/44">Showcase</a></td>
+<td><a href="https://opensource.org/license/apache-2-0">Apache-2.0</a></td>
+<td style="text-align: center;">-</td>
+<td><a href="https://go.dev/">Go</a></td>
+<td><a href="https://www.markdownguide.org/">Markdown</a></td>
+<td><a href="https://www.digitalocean.com/community/tutorials/how-to-use-templates-in-go">Go</a></td>
+</tr>
+<tr>
+<td><a href="https://www.mkdocs.org/">MkDocs</a></td>
+<td><a href="https://github.com/mkdocs/mkdocs">19 916</a></td>
+<td><a href="https://www.mkdocs.org/user-guide/choosing-your-theme/">Themes</a></td>
+<td><a href="https://github.com/mkdocs/mkdocs/wiki/MkDocs-Users">Showcase</a></td>
+<td><a href="https://opensource.org/license/bsd-3-clause">BSD-3-Clause</a></td>
+<td style="text-align: center;">-</td>
+<td><a href="https://www.python.org/">Python</a></td>
+<td><a href="https://www.markdownguide.org/">Markdown</a></td>
+<td><a href="https://jinja.palletsprojects.com/en/stable/">Jinja2</a></td>
+</tr>
+<tr>
+<td><a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a></td>
+<td><a href="https://github.com/squidfunk/mkdocs-material">22 182</a></td>
+<td>-</td>
+<td><a href="https://github.com/squidfunk/mkdocs-material#trusted-by-">Showcase</a></td>
+<td><a href="https://opensource.org/license/mit">MIT</a></td>
+<td style="text-align: center;"><a href="https://www.mkdocs.org/">MkDocs</a></td>
+<td><a href="https://www.python.org/">Python</a></td>
+<td><a href="https://www.markdownguide.org/">Markdown</a></td>
+<td><a href="https://jinja.palletsprojects.com/en/stable/">Jinja2</a></td>
+</tr>
+<tr>
+<td><a href="https://rust-lang.github.io/mdBook/">MdBook</a></td>
+<td><a href="https://github.com/rust-lang/mdBook">19 028</a></td>
+<td>?</td>
+<td>?</td>
+<td><a href="https://opensource.org/license/mpl-2-0">MPL-2.0</a></td>
+<td style="text-align: center;">-</td>
+<td><a href="https://www.rust-lang.org/">Rust</a></td>
+<td><a href="https://www.markdownguide.org/">Markdown</a></td>
+<td>?</td>
+</tr>
+<tr>
+<td><a href="https://vuepress.vuejs.org/">VuePress</a></td>
+<td><a href="https://github.com/vuejs/vuepress">22 703</a></td>
+<td><a href="https://github.com/vuepress/awesome-vuepress/blob/main/v2.md#themes">Themes</a></td>
+<td><a href="https://github.com/vuepress/awesome-vuepress/blob/main/v2.md#projects-using-vuepressv2">Showcase</a></td>
+<td><a href="https://opensource.org/license/mit">MIT</a></td>
+<td style="text-align: center;"><a href="https://vuejs.org/">Vue</a></td>
+<td><a href="https://www.w3schools.com/js/">JavaScript</a></td>
+<td><a href="https://www.markdownguide.org/">Markdown</a></td>
+<td><a href="https://vuejs.org/">Vue</a></td>
+</tr>
+<tr>
+<td><a href="https://vitepress.dev/">VitePress</a></td>
+<td><a href="https://github.com/vuejs/vitepress">13 990</a></td>
+<td><a href="https://github.com/logicspark/awesome-vitepress-v1#art-themes">Themes</a></td>
+<td>?</td>
+<td><a href="https://opensource.org/license/mit">MIT</a></td>
+<td style="text-align: center;"><a href="https://vuejs.org/">Vue</a></td>
+<td><a href="https://www.w3schools.com/js/">JavaScript</a></td>
+<td><a href="https://www.markdownguide.org/">Markdown</a></td>
+<td><a href="https://vuejs.org/">Vue</a></td>
+</tr>
+<tr>
+<td><a href="https://www.11ty.dev/">11ty</a></td>
+<td><a href="https://github.com/11ty/eleventy/">17 688</a></td>
+<td><a href="https://www.11ty.dev/docs/starter/">Themes</a></td>
+<td><a href="https://www.11ty.dev/speedlify/">Showcase</a></td>
+<td><a href="https://opensource.org/license/mit">MIT</a></td>
+<td style="text-align: center;">-</td>
+<td><a href="https://www.w3schools.com/js/">JavaScript</a></td>
+<td><a href="https://www.markdownguide.org/">Markdown</a></td>
+<td>A bunch</td>
+</tr>
+<tr>
+<td><a href="https://docusaurus.io/">Docusaurus</a></td>
+<td><a href="https://github.com/facebook/docusaurus">58 443</a></td>
+<td><a href="https://docusaurus.io/docs/api/themes">Themes</a></td>
+<td><a href="https://docusaurus.io/showcase">Showcase</a></td>
+<td><a href="https://opensource.org/license/mit">MIT</a></td>
+<td style="text-align: center;"><a href="https://react.dev/">React</a></td>
+<td><a href="https://www.w3schools.com/js/">JavaScript</a></td>
+<td><a href="https://mdxjs.com/">MDX</a></td>
+<td><a href="https://react.dev/">React</a></td>
+</tr>
+<tr>
+<td><a href="https://nextra.site/">Nextra</a></td>
+<td><a href="https://github.com/shuding/nextra">12 369</a></td>
+<td>?</td>
+<td><a href="https://nextra.site/showcase">Showcase</a></td>
+<td><a href="https://opensource.org/license/mit">MIT</a></td>
+<td style="text-align: center;"><a href="https://nextjs.org/">NextJS</a>/<a href="https://react.dev/">React</a></td>
+<td><a href="https://www.typescriptlang.org/">TypeScript</a></td>
+<td><a href="https://mdxjs.com/">MDX</a></td>
+<td><a href="https://react.dev/">React</a></td>
+</tr>
+<tr>
+<td><a href="https://markdoc.dev/">Markdoc</a></td>
+<td><a href="https://github.com/markdoc/markdoc">7 404</a></td>
+<td>?</td>
+<td><a href="https://docs.stripe.com/">One Example</a></td>
+<td><a href="https://opensource.org/license/mit">MIT</a></td>
+<td style="text-align: center;"><a href="https://react.dev/">React</a></td>
+<td><a href="https://www.typescriptlang.org/">TypeScript</a></td>
+<td>Custom Markdown</td>
+<td><a href="https://react.dev/">React</a>?</td>
+</tr>
+<tr>
+<td><a href="https://antora.org/">Antora</a></td>
+<td><a href="https://gitlab.com/antora/antora">554</a></td>
+<td>?</td>
+<td><a href="https://gitlab.com/antora/antora.org/-/issues/20">Showcase</a></td>
+<td><a href="https://opensource.org/license/mpl-2-0">MPL-2.0</a></td>
+<td style="text-align: center;">-</td>
+<td><a href="https://www.w3schools.com/js/">JavaScript</a></td>
+<td><a href="https://asciidoc.org/">AsciiDoc</a></td>
+<td><a href="https://handlebarsjs.com/">Handlebars</a></td>
+</tr>
+<tr>
+<td><a href="https://www.sphinx-doc.org/en/master/">Sphinx</a></td>
+<td><a href="https://github.com/sphinx-doc/sphinx">6 850</a></td>
+<td><a href="https://sphinx-themes.org/#themes">Themes</a></td>
+<td>?</td>
+<td><a href="https://opensource.org/license/bsd-2-clause">BSD-2-Clause</a></td>
+<td style="text-align: center;">-</td>
+<td><a href="https://www.python.org/">Python</a></td>
+<td><a href="https://docutils.sourceforge.io/rst.html">reStructuredText</a></td>
+<td><a href="https://jinja.palletsprojects.com/en/stable/">Jinja2</a></td>
+</tr>
+<tr>
+<td><a href="https://quarto.org/">Quarto</a></td>
+<td><a href="https://github.com/quarto-dev/quarto-cli">4 213</a></td>
+<td>?</td>
+<td><a href="https://quarto.org/docs/gallery/">Showcase</a></td>
+<td><a href="https://opensource.org/license/mit">MIT</a></td>
+<td style="text-align: center;">-</td>
+<td><a href="https://www.typescriptlang.org/">TypeScript</a>/<a href="https://www.w3schools.com/js/">JavaScript</a></td>
+<td><a href="https://www.markdownguide.org/">Markdown</a></td>
+<td><a href="https://jupyter.org/">Python Jupyter</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Pro Tips</p>
+<ul>
+<li>Make sure you check out this <strong>awesome feature</strong>: you can <strong>click</strong> on <strong>any column header</strong> to <strong>sort the table</strong>!</li>
+<li>Almost everything is a link. Go explore!</li>
+</ul>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Popularity, as you can see if you hover over that field, represents the number of stars on GitHub. This is a bit unfair, I feel like, to Antora, who is hosted on GitLab. Which could perhaps explain the little number of stars compared to others, all hosted on GitHub. I would not consider this datapoint for Antora.</p>
+</div>
+<h4 id="how-did-i-choose-my-ssg">How did I choose my <abbr title="Static Site Generator">SSG</abbr>?</h4>
+<p>Cool. How to choose? Well, we need criteria. We already know they use different markup languages. That would be the first decision to make. Let's however leave that for last and consider all other criteria.</p>
+<p>There are some simple arguments, one of which is complexity, the other being popularity.<br />
+From what <a href="https://news.ycombinator.com/item?id=36529880">I read</a>, MkDocs is a good default choice if you're getting started, together with Jekyll. Jekyll is more complete they say. Material for MkDocs adds a lot on the plain MkDocs, so probably competes with Jekyll. I have no idea; I've never tried any of those frameworks. I don't know all of their features by heart. etc. Hugo, despite incredibly more popular, seems more complex to set up. Together with Docusaurus (really popular, MDX based), Antora (asciidocs) "the best" (?) and Sphinx (reStructuredText), which has its fanbase as well. But less popular.</p>
+<p>So, so, so.... How to choose...<br />
+I don't want to deal with additional complexities brought by MDX and other custom flavored Markdown, though basic Markdown will need to be extended and thus becomes custom very quickly. So that's not a good argument. And actually, MDX and the fact you can simply bring components in your markup seems really cool. </p>
+<p>But I'm not a frontend developer; being fluent in vanilla HTML/CSS/JavaScript doesn't make me one. I need to learn a frontend developing framework. I don't want to do that to build this site. The primary objective is to quickly, and as easily as possible, but with some margin for scaling in terms of features and complexity, bring some <strong>content</strong> online. I'll add the additional constraint that I don't want something based on a frontend framework; so if I need to do some development in the <abbr title="Static Site Generator">SSG</abbr> I don't have to deal with that complexity. My assumption is that it will be easier to develop in a framework that was developed from scratch, so perhaps more tailored to the specific task of static site generation: making Markdown (or AsciiDoc, or reStructuredText) look good and deployable (we'll see that last part in a bit).</p>
+<p>So this eliminates a lot of very good choices: Docusaurus (but also lesser known options such as Nextra, Markdoc) based on the React ecosystem, and VuePress/VitePress based on the Vue ecosystem. Let's add another constraint: I know Python and Javascript, so if I need to tweak a bit frameworks based on those, no problem. But I don't want to deal with Ruby, Go, Rust. Which eliminates Jekyll and Hugo (and mdbook). My stupid arbitrary lazy constraints just removed the most <em>popular</em> <abbr title="Static Site Generators">SSGs</abbr> from the pool of <abbr title="Static Site Generators">SSGs</abbr> I can choose from. Wow. Sorting the table by popularity, and I had a hard time putting that feature in, because those are numbers, and I'm an idiot, the next big <abbr title="Static Site Generator">SSG</abbr> is <strong>Material for MkDocs</strong>.</p>
+<p>I'm going to be totally honest here. I'm totally biased towards that <abbr title="Static Site Generator">SSG</abbr>. Because I've been using some documentation, that I think is really sober and straight to the point, based on this framework. I didn't know it. But I came back to check it. And that explains my bias. This option is even more popular than the vanilla MkDocs, and adds so much features to it, no question here. We're left with Material for MkDocs, 11ty ("eleventy"), Sphinx and Antora, by decreasing popularity. I did a good job constraining my options.</p>
+<p>I'll quickly remove 11ty from the pool, given my bias (and it's less popular than my preferred choice).</p>
+<p>Which means we have three big contenders, which, oh-so-randomly happen to be for different markup languages. Probably the first criteria you want to base your decision upon. lol. Material-MkDocs for Markdown, Sphinx for reST and Antora for AsciiDoc. Given my natural biases, I'm removing Sphinx, though I am a Python guy. I do like Python. But I've been biased towards the first of the list, and I've assisted to a talk promoting Antora. It's now time to make the tough last call regarding the markup language...</p>
+<p>I chose Material for MkDocs. It's not a good choice. It's a choice. When I was telling you about AsciiDocs earlier, I told you I chose MD for no good reason. Indeed. It's a seemingly arbitratry choice, very likely influenced by my identified bias, which I did not correct, apparently, in spite of being aware of its existence. I thought this was the best choice. I can tell you now that there are some things I don't like about MD, and that I am using a heavy number of extensions, which themselves need some custom javascript (like the table sorting above). Though, I'm currently managing to leverage the framework to keep HTML, JS, CSS out of my MD. Sort of. The framework allows addition of <a href="https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/#attribute-lists">attributes</a> to MD elements (a list element, a paragraph, image, title...) which means you can add HTML attributes, notably classes (which is useful for CSS) without actually writing HTML or CSS in the MD file itself.</p>
+<p>But other things are stupid. Like, if I want a list, and multiple paragraphs in one bullet point, which I often do because I digress infinitely, and add comas, and paragraph-long parenthesis, really trying to scare anyone away that would dare to read what comes out of my twisted mind; I have to go through this convoluted non-sense!</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Markdown</label><label for="__tabbed_1_2">Result</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-markdown highlight"><span class="filename">Bullet point with multiple paragraphs</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">-</span><span class="w"> </span>I&#39;m a bullet point, yeah!!
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    I&#39;d like to still be in that bullet point, but as a separate paragraph please!
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="k">-</span><span class="w"> </span>I&#39;m another bullet point.
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>
+<p>I'm a bullet point, yeah!!</p>
+<p>I'd like to still be in that bullet point, but as a separate paragraph please!</p>
+</li>
+<li>
+<p>I'm another bullet point.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<p>The spacing is ridiculous. Also, if you want a new line (<code class="language-html highlight"><span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span></code> in HTML), <strong>not</strong> a new <em>paragraph</em> (<code class="language-html highlight"><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span></code> in HTML), you need to put <strong>two spaces</strong> at the end of your line! You can't just hit enter! Noob mistake.<br />
+Oh well, once you know, you know. The learning curve is however ridiculously small. For the standard Markdown that is. Because you'll quickly want to learn all the <a href="https://squidfunk.github.io/mkdocs-material/reference/">cool display tricks</a> your <abbr title="Static Site Generator">SSG</abbr> offers you.</p>
+<p>To conclude this section: the important part was not the choice. It was <em>making one</em>. I'm now a bit educated, and I hope you too, on <em>how</em> to choose. What the differences are between this and that <abbr title="Static Site Generator">SSG</abbr>. But this barely scratches the surface and is light-years away from making an educated decision based on experience: one would need to try them all! </p>
+<p>Like I said, it doesn't matter which one, what matters is the content. Yes, there will be things that won't easily be migrated from one framework to another, but most of what I will do is writing content. That shouldn't be too hard to migrate.</p>
+<p>Again, <strong>The Process</strong>. <strong>Doing</strong>, rather than living in theory world, imagining, studying, analyzing, theorizing, with nothing to show for it. I chose a framework that seems cool, I like the theme, I'll start with that.</p>
+<h2 id="boilerplate-hosting">Boilerplate &amp; Hosting</h2>
+<h3 id="hosting-platforms">Hosting Platforms</h3>
+<p>Alright, we took care of which framework to choose. Now we'll need to host our site somehwere. The framework, the <abbr title="Static Site Generator">SSG</abbr>, is a piece of software that will run locally on your computer, and then you'll execute a command, and BAM - it will push your newly created content to a hosting platform, to a server, somewhere on the web. Where you decided. But you need to do some configuration for that to work. Here are some options:</p>
+<ul>
+<li><a href="https://pages.github.com/">GitHub Pages</a> (Supports custom domains, 404 pages etc.)</li>
+<li><a href="https://about.readthedocs.com/">Read The Docs</a></li>
+<li>Any provider that can host static files, e.g.<ul>
+<li><a href="https://aws.amazon.com/s3/">AWS S3</a> or <a href="https://aws.amazon.com/blogs/aws/simplify-and-enhance-amazon-s3-static-website-hosting-with-aws-amplify/">AWS Amplify Hosting + S3</a> (see the <a href="https://aws.amazon.com/websites/">different options</a>)</li>
+<li><a href="https://cloud.google.com/storage/docs/hosting-static-website">Google Cloud Storage Bucket</a> (+ Load Balancer for custom domain)</li>
+<li><a href="https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website">Azure Storage</a> or <a href="https://azure.microsoft.com/en-us/products/app-service/static/">Azure Static Web Apps</a> (AuthN/Z, headers, CI/CD pipeline)</li>
+</ul>
+</li>
+<li><a href="https://vercel.com/">Vercel</a></li>
+<li><a href="https://www.netlify.com/">Netlify</a></li>
+</ul>
+<p>Indeed, since all that is produced by your <abbr title="Static Site Generator">SSG</abbr> is a bunch of <em>static</em> files (HTML, CSS, JavaScript and assets such as images etc.), you don't need a particularly fancy platform or whatever. You need a server that will serve those files when queried. Which is why the Big Three, AWS, GCP and Azure could very well do that job.</p>
+<p>However, I don't just want my website online, I also want the source code of my website, the markdown documents before they are transformed into HTML. Imagine I lose my machine, or it gets stolen, or it breaks down? I want a safe copy of my source code somewhere! And I want it versioned. This way I can, and anyone can see exactly what was added, when, by whom (if you're open to collaboration). Having a public repository with your website source on it also means anyone could submit a "correction page" for errors, typos, etc.</p>
+<p>Welcome to the great world of Source Code Management. GitHub is the biggest player in town. And it's all free. So that's where I'll host my source code. GitHub also offers the possibility, freely, to render a website from your source code (md documents etc.). The native <abbr title="Static Site Generator">SSG</abbr> associated with GitHub is Jekyll. There's probably very little to do to get all of that sweetly configured to work together. Maybe nothing actually. My Website was actually automatically rendered with Jekyll! I had to add a <code>.nojekyll</code> file to my repository to avoid having GitHub's Jekyll render my source code. Instead, I <a href="https://squidfunk.github.io/mkdocs-material/publishing-your-site/">configured a GitHub action</a> that will automatically do all the work to <strong>publish</strong> my new webpages rendered via Material for MkDocs, whenever I push the documents from my computer to GitHub.</p>
+<p>I'm not inventing anything, of course. Let's go through all the steps together; without stupidly repeating what's already written in their perfectly fine documentation.</p>
+<p>Before I leave the hosting platforms, I could also mention <a href="https://pages.cloudflare.com/">Cloudflare Pages</a>. This isn't free. But since I bought a domain from Cloudflare, it's included for free! There is a higher tier, but if I ever move to Cloudflare pages (because it supports features that GitHub doesn't provide), I'll start with the "free" tier, which seems more than enough for my website right now. When I'll have seven septillion unique users visiting my webpages every month, this may change, and I'll need some scaling power behind the scenes which ain't gonna be free. Right now, GitHub Pages is good.</p>
+<p>We're officially done with the choosing part! We climbed our way out of the rabbit whole. I'd like to personally congratulate you for reading this far. We are going to use Material for MkDocs (in case I didn't say it enough, ya never know, ya know) as the Static Site Generator for our content, and GitHub as both the hosting platform for our repository (to safeguard its existence, with an online backup, and enable collaboration) and as the hosting platform for our website with GitHub Pages.</p>
+<p>Birth still hasn't taken place yet however. Baby is merely growing in mama's belly right now. Let's see how to welcome it to the world.</p>
+<h3 id="setting-up-the-boilerplate">Setting up the boilerplate</h3>
+<p>Baby isn't actually fully grown yet. So there's nothing to be born. We chose Mommy and Daddy, I won't insult you by repeating one more time who they are.<br />
+(Ok, let's address this. Why the baby analogy. Everybody's having babies around me. I'm going to be an uncle soon. Babies everywhere.)  </p>
+<p>The womb is your computer. And it's pretty easy to make it the right place for a website to grow: by merely following Material's <a href="https://squidfunk.github.io/mkdocs-material/getting-started/">Getting Started</a> section. It starts by how to install the framework on your computer, no issues there; I'm familiar with Python. It continues with how to <a href="https://squidfunk.github.io/mkdocs-material/creating-your-site/">create a website</a> (the boilerplate at least). </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>I'm going on a rant right here. To be fair, it's not at all anywhere near material's fault for any of this. It just so happens the vscode plugin for validating yaml schemas, supposedly maintained by redhat, has a bug. And I got a tiny bit frustrated.
+You've been warned. You could actually just skip to the next chapter <a href="#deployment">Deployment</a>.</p>
+</div>
+<p>OH BOY I HAD SOME FUN THERE. Since this is in all caps, it is perhaps ironic. Everything went well until I tried integrating their own schema.json for validating the syntax of <code>mkdocs.yml</code>. I lost an evening on that I think. The code you're supposed to paste in your vscode's <code>settings.json</code> is the following:
+<div class="language-json highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;yaml.schemas&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&quot;https://squidfunk.github.io/mkdocs-material/schema.json&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mkdocs.yml&quot;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">&quot;yaml.customTags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="s2">&quot;!ENV scalar&quot;</span><span class="p">,</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="s2">&quot;!ENV sequence&quot;</span><span class="p">,</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="s2">&quot;!relative scalar&quot;</span><span class="p">,</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="s2">&quot;tag:yaml.org,2002:python/name:material.extensions.emoji.to_svg&quot;</span><span class="p">,</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="s2">&quot;tag:yaml.org,2002:python/name:material.extensions.emoji.twemoji&quot;</span><span class="p">,</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="s2">&quot;tag:yaml.org,2002:python/name:pymdownx.superfences.fence_code_format&quot;</span><span class="p">,</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="s2">&quot;tag:yaml.org,2002:python/object/apply:pymdownx.slugs.slugify mapping&quot;</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">  </span><span class="p">]</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="p">}</span>
+</span></code></pre></div></p>
+<p>Ok, you're happy. Except no validation at all is taking place. You save your <code>mkdocs.yml</code> file with mistakes, and you have to wait for the live preview server automatic building to tell you there's an issue:</p>
+<figure>
+<p><img alt="Screenshot of a build error in the terminal when the value of theme, which can only be mkdocs, readthedocs, material, was unrecognized as 'hehe'." loading="lazy" src="/assets/images/yaml_build_error.png" /></p>
+<figcaption></figcaption>
+</figure>
+<p>That's not what you want. You want that plugin that makes yaml validation within your <abbr title="Integrated Development Environment">IDE</abbr> to highlight your mistakes in real time! So, I went to my extensions, looked for the yaml extension, went into features and runtime status, and, oh! Surprise motherfucker! We've got some fucking errors you dumb bitch! Go figure out by yourself that they're here!  </p>
+<figure>
+<p><img alt="VScode interface that illustrates what's described above and more particularly, the error message detailed below." loading="lazy" src="/assets/images/yaml_schema_validation_error.png" /></p>
+<figcaption></figcaption>
+</figure>
+<p>However, thank God, I now have an error message to work with: </p>
+<div class="language-text highlight"><pre><span></span><code>Request yaml/get/jsonSchema failed with message: no schema with key or ref &quot;https://json-schema.org/draft-07/schema&quot;
+</code></pre></div>
+<p>What the fuck, what in God's holiest of names does that frackin' mean. You can tell I'm getting a nice work out just writing about it again. There are some subtle signs. Maybe the invocation of God as an agnostic, maybe the one swear word per sentence policy... Subtle signs.</p>
+<p>I often get exasperated when people ask me for help. They tell me "<em>I don't know what to do! There's an error! Please help me!</em>". So I look at the error message. It describes <strong>exactly</strong> what the issue is, which makes it <strong>painfully clear</strong> what to do to fix it. This annoys me. Like, I'm laughing writing this write now. That's how much it annoys me. So... Am I going to be that guy? No. Is the error useful?...</p>
+<p>Where the F (you know the <code>F</code>? No? It's a nice letter. I'll get you acquainted.) does that <code>https://json-schema.org/draft-07/schema</code> URL come from. The URL in my configuration is <code>https://squidfunk.github.io/mkdocs-material/schema.json</code>. Ok let's go look at that URL, maybe it can't access it or something, maybe it's been removed, 404'ed... Who knows? Nope, it's there. I can access that URL, it displays a validation schema in JSON, and first line, there it is, that URL wreaking havoc before I even started writing anything. The site isn't online, there's nothing on it, I barely created it; I'm already stumbling on stupid shit that doesn't work. It's ok. I'm a developer, I think to myself. I'm used to shit that don't work dawg. That's my JAM. I was born in shit that don't work, I was molded by it!!!</p>
+<p>But I'm really frustrated. I mean, it's in the official documentation, I'm supposed to copy/paste and move on with my life. That's what's frustrating. Anyway. I look it up google. I find <a href="https://github.com/redhat-developer/vscode-yaml/issues/1096">this opened GitHub issue</a>, really recent (one week old). It's dead on point. It says that this vscode extension generates an error (the one I got) when using a schema based on <code>https://json-schema.org/draft-07/schema</code>; <em>but</em>, the error doesn't appear if the protocol is http rather than https. I read that same thing on <a href="https://stackoverflow.com/questions/69133771/ajv-no-schema-with-key-or-ref-https-json-schema-org-draft-07-schema">Stackoverflow</a>.</p>
+<p>Except that line is on the distant file at <code>https://squidfunk.github.io/mkdocs-material/schema.json</code>. So I can't modify it! But... I don't need to use a <em>distant</em> file... Muahahahaha (yeah, I lost it). I landed on this IBM article about configuring schema validation for VSCode, and they're using the <code>file:///</code> protocol, which is to load local files. So it's as simple as downloading mkdocs-material's <code>schema.json</code>, modifying that first line to be <code>http</code>, rather than <code>https</code>, and configuring the VSCode extension to use that local file rather than the distant one: </p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">&quot;yaml.schemas&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">&quot;file:///C:/Users/fuchs/dev/site/.vscode/mkdocs_schema.json&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mkdocs&quot;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="p">},</span>
+</span></code></pre></div>
+<p>If you don't know who I am, yes, <strong>Fuchs</strong> is my name. It's written right up there in your browser. Let me do a <a href="https://www.youtube.com/watch?v=p1RKkRCiU90">Sungwon bit</a> real quick. Man, never fails to make me laugh. That guy is a genious. Also a talented voice actor. Anyway, it's not pronounced like Fuck, or Fucks, I know it's tempting. It's not Fushhs or Fashhhs or whatever else I've been hearing my entire life. You know how to pronounce Foo, right? We use it all the time in development. Foo. Bar. And you also know who to pronounce an X. Like, hey, say, Fox. Now combine Foo and that X sound, and you get <strong>Foox</strong>. That's how it's pronounced. </p>
+<p>Coincidently, this looks an aweful like the word Fox. Doesn't it? What a coincidence!!! Oh wait, no. Fuchs, which, again, is pronounced "Foox", actually means Fox in German. Yes, a Frenchman with a German name. The true horrors of world wars, mixing the most uptight with the most arrogant people in the world. And you get me. (two generations later, thank god; I'm only one quarter uptight, and three quarters arrogant!)</p>
+<p>Wait, where was I, I think we were talking about something interesting like YAML schema validation. Right. So, I have my local file, which isn't raising any errors in the very hidden depths of the YAML validation extension. But it's still not validating that the name of the theme should not be "hehe".</p>
+<figure>
+<p><img alt="VScode interface that illustrates a description being displayed when hovering over the theme &quot;name&quot; field. The description being what this field is for." loading="lazy" src="/assets/images/theme_name_description.png" /></p>
+<figcaption></figcaption>
+</figure>
+<p>At least I have a description... Cool... If I try the <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-space">Space</kbd></span> trick, out of curiosity, it should give me autocompletion. This is completely out of curiosity, because if it can't validate the current value isn't the correct one, how would it give me possible values?</p>
+<figure>
+<p><img alt="VScode interface that illustrates the auto-completion menu displaying a bunch of weird ass options, with one being the incorrect but intelligible &quot;mkdocs&quot; value." loading="lazy" src="/assets/images/theme_name_mkdocs.png" /></p>
+<figcaption></figcaption>
+</figure>
+<p>It gives me a bunch of nonsense. And the option "mkdocs". Which isn't a possible value. As we previously saw in the error message, the correct values are mkdocs, readthedocs or material. The latter of which is what we need.</p>
+<p><img align="left" alt="VScode interface that a field named &quot;yolo&quot;, perfectly working, not raising any errors. The value is &quot;hello!&quot;." loading="lazy," src="/assets/images/additional_properties.png" /> 
+Ok, maybe it's just not validating any values of fields, but at least it'll validate that the fields are the correct ones, right? Mother F!...<br />
+This builds just fine by the way. Even the framework's chill with that.</p>
+<p>Right. There's an option for <em>Additional Properties</em>. You could want to enforce a schema for a certain set of properties while still allowing it be extended after all. So I <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-p">P</kbd></span>, type <code>settings</code>, and choose <code>Preferences: Open Settings (UI)</code>. The UI rather than my JSON configuration file so that I can get all the default options displayed, in case there is anything for that additional properties feature, which I didn't know at the time. I tick the box to disable additional properties and oh god, what's this.</p>
+<figure>
+<p><img alt="VScode &quot;PROBLEMS&quot; interface, listing 13 different issues with the YAML file." loading="lazy" src="/assets/images/problems.png" /></p>
+<figcaption></figcaption>
+</figure>
+<p>Now that's unexpected. "yolo", I understand. But "palette"?! That's taken directly from the <a href="https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/">Changing the colors</a>, the very first setup I did! (Yes, I'm writing this article after doing a lot of configuration already... I'm not even writing this article chronologically! I already wrote what comes after the deployment, showcasing some features of the framework! Time traveling.. how fun.)</p>
+<p>Now, I'm lost. I don't understand. Fortunately, I have a brain, and I'm not lost for long. It's validating against the schema I downloaded and put in a file. So I look at that schema and <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-f">F</kbd></span> for <code>palette</code>. Nothing. After a bit of speaking to myself, I search for <code>theme</code>, the parent node which also happens to be a root node in the schema. Guess what I found! Yep, you certainly didn't guess it, since you just went on reading, and you're going to blame me calling it rhetorical and arguing for the lack of question mark, supplanted by an exclamation mark. You'd be right. But still... Did you guess?</p>
+<p>A fucking reference man. Of course. Why would they put everything in the same file when they can separate in smaller pieces!! </p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">&quot;theme&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">&quot;$ref&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;schema/theme.json&quot;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>When pulling from the remote source, I guess these would be intelligently resolved. But here, since it's a local file, it's looking for another file, <strong>locally</strong>, named theme.json. In the directory schema. Of course, that's not the only reference there is. I need to pull of those now. After doing that, I see other references in the references, and some more in those. OK people! We won't get any YAML validation, and I'll disable the additional properties feature of the yaml validator to not have any more problems.</p>
+<p>Why am I talking about all of this... Ah yes. That's the first step in the doc, right after generating a boilerplate. Good first impression. But I persevere. </p>
+<p>You then have the choice to look at advanced configuration (which is the <a href="https://squidfunk.github.io/mkdocs-material/setup/">https://squidfunk.github.io/mkdocs-material/setup/</a> tab), or even look at <a href="https://github.com/mkdocs-material/create-site">a template for site creation</a>, if you really want to bootstrap your adventure. A bunch of options are already included there. You'll also discover that this opensource free <abbr title="Static Site Generator">SSG</abbr> is not completely opensource or free. You need to pay to get the "insiders" version. Which means you'll have to strip that site template of any options that don't work. Let's skip that for now.</p>
+<p>The last parts in the site creation are <strong>how to run</strong> your site locally. There is indeed a local development server! That's pretty slick. Anytime you edit a page, it automatically reloads and takes changes into account to directly display the result in your browser. Finally, there's a command for <strong>building</strong> the site. You understood by now, you need the framework to transform everything into static files (HTML, CSS, JavaScript) and make it look beautiful, integrate all the features etc. That's what it's here for! You can't just serve your markdown documents from a server and hope it'll magically look like what you see on their website.</p>
+<p>We now move on to the publication part: actually putting your site online.</p>
+<h3 id="deployment">Deployment</h3>
+<p>Publishing / deploying your website can be followed on the <a href="https://squidfunk.github.io/mkdocs-material/publishing-your-site/">next chapter of material's doc</a>. They documented how to do it on GitHub, and GitLab! And rely on the community for other platforms (some community guides directly linked at the bottom of that page, for Cloudflare Pages, Netlify, Vercel, Fly.io and Scaleway). The really cool thing about GitHub is GitHub actions. But I've seen the same documented for GitLab, so perhaps all platform support some kind of GitHub actions. This is basically a definition for a pipeline, a CI/CD pipeline! I talked about this at length in another article (if you don't see the reference here, tell me! I should add it - as of now in March, it has not yet been published), so I won't do that again here.</p>
+<p>The documentation gives some code for a working CI that, whenever you commit code to your github repo, will build the site and publish it as well! Awesome!!!</p>
+<p>Of course, you need to create a <a href="https://pages.github.com/">GitHub Pages</a> repo first, either one for a particular project, or one for your user. Everything's explained. I chose the <em>User</em> option, as this site represents me more than a particular project. But if you want to create a technical documentation site for a specific project, it would make perfect sense to choose the <em>Project</em> option. </p>
+<p>I'll suppose you're familiar with git; if it's not the case, I'm sure there are plenty of tutorials on the web. I don't intend on covering that here.</p>
+<p>Let's recap: you have</p>
+<ul>
+<li>an <abbr title="Integrated Development Environment">IDE</abbr> (unless you prefer notepad... or whatever you're using... maybe you're a Vim person, I completely respect that. Plus, you'd certainly argue that it <em>is</em> an <abbr title="Integrated Development Environment">IDE</abbr>)</li>
+<li>a GitHub Pages repository</li>
+<li>python, and material installed</li>
+<li>a boilerplate project, kind of empty, but that's what boilerplate means.</li>
+</ul>
+<p>Your GitHub action is defined, you're ready to <code>git push</code> your files to your repository and watch the magic happen!</p>
+<p>Except, this might not be working, right away, or at some point. For example. If you installed a bunch of features, plugins etc... There's one plugin, <a href="https://squidfunk.github.io/mkdocs-material/tutorials/blogs/engage/#rss-feeds">the RSS one</a>, that needs another python package to be installed. This means you need to <code>pip install mkdocs-rss-plugin</code> in your local python environment to see it work. And it also means <strong>you need to update your pipeline</strong>! It'll fail because that package is missing and it's now expecting it. So go to your <code>ci.yml</code> and add that exact same command:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>      - run: pip install mkdocs-material 
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>      - run: pip install mkdocs-rss-plugin
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>      - run: export PYTHONPATH=. ; mkdocs gh-deploy --force
+</span></code></pre></div>
+<p>There you go. Your Actions won't fail anymore. There's one more thing to be wary of: this CI will publish your site to another branch in your repository: <strong>gh-pages</strong>. Under your repository's settings, Pages, Build and deployment, Source, you'll have the choice between deploying your site from a <strong>branch</strong> or <strong>GitHub Actions</strong>. Make sure it's the <strong>former</strong>!! Despite using a GitHub Action to run everything for you every time you commit some code changes, it'll "just" publish the website to the <code>gh-pages</code> branch. So you have to tell GitHub to Deploy from a branch, and choose <code>gh-pages</code>  <code>/root</code>:</p>
+<figure>
+<p><img alt="GitHub pages interface, showcasing what was described right above." loading="lazy" src="/assets/images/github_pages_build.png" /></p>
+<figcaption></figcaption>
+</figure>
+<p>You'll also notice in the above picture some extra details about some TLS certificate steps bein processed, and a custom domain name... We'll get there in a second.</p>
+<p>You can review all your previous deployments from the Actions tab:</p>
+<figure>
+<p><img alt="GitHub Actions interface, showcasing the few pipeline runs (some red, which means there were issues, some green)." loading="lazy" src="/assets/images/github_actions.png" /></p>
+<figcaption></figcaption>
+</figure>
+<h3 id="domain-name">Domain Name</h3>
+<p>Your site is now online. Birth <em>technically</em> took place. It's online. <em>However</em>... Is it really a human being... uhm... I mean... a website... I gotta stop with this analogy... if it doesn't have a name???</p>
+<p>Sure, GitHub Pages give you a domain like <a href="">yourusername.github.io</a>, which is pretty cool already! But if you want to look real professional, reall good, you have to register a <strong>domain name</strong>.</p>
+<p>I'll skip all the complicated parts about how or why or when or who or where etc. A domain name is going to be like <a href="">google.com</a>, or <a href="">william-fuchs.com</a>, or whatever you'll come up with! And you want it to take users to your website, which is currently available from the domain name <a href="">yourusername.github.io</a>.</p>
+<p>Let's take things one at a time. First you need to buy your domain. There are plenty of sites offering that service. I've read really bad stories about some of them, like godaddy. I'm going to directly recommend the one I picked: you know it!! <a href="https://www.cloudflare.com/">Cloudflare</a>. Why? I trust it. It has excellent reputation. I've read a good number of articles on their site, e.g. <a href="https://www.cloudflare.com/learning/dns/what-is-dns/">one explaining what DNS is</a>, or what <a href="https://www.cloudflare.com/learning/cdn/glossary/anycast-network/">anycast</a> is. I've seen them everywhere, protecting websites with anti-bot systems (that I have to painfully figure out how to bypass for automation purposes ahaha... But that's another story; and again, I'm just using what other people have developed). They are a CDN, Content Delivery Network, which means they'll be caching your webpages, css, javascript, images etc. to serve them as close and quickly to the end customer as possible. There's a ton more features you'll get with them that I have not even begun to explore! Just look at the vertical menu on the left hand-side in the below screenshot; web analytics, Email, Security, Optimization for speed, quick actions!... Don't pay attention to the number of unique visitors and total requests I have on my website; I'm really really famous.</p>
+<figure>
+<p><img alt="GitHub pages interface, showcasing what was described right above." loading="lazy" src="/assets/images/cloudflare_dark.png#only-dark" />
+<img alt="GitHub pages interface, showcasing what was described right above." loading="lazy" src="/assets/images/cloudflare.png#only-light" /></p>
+<figcaption></figcaption>
+</figure>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you scroll a bit upwards, the header will appear. Next to the search bar, you'll see a button you can toggle. Switch to dark or light themes, you'll see the above screenshot changes based on which theme you have!! Isn't that cool??!</p>
+</div>
+<p>This one was an easy choice. The study didn't go far down any rabbit's hole here, I'll tell you that!</p>
+<p>To configure everything, you have a bunch of documentation from GitHub <a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site">right here</a>. I'm not telling you exactly what to do, because it may vary from what I did. For example, I don't want a site starting with www. But if you do, you might need to slightly adapt. You also have <a href="https://blog.cloudflare.com/secure-and-fast-github-pages-with-cloudflare/">this post from Cloudflare</a> itself that explains how to set this up, which is perhaps simpler. It also details some configurations which are specific to Cloudflare.</p>
+<p>So, on my side. What did this look like? I have <a href="https://github.com/hillfias/hillfias.github.io/blob/master/CNAME">a file named <strong>CNAME</strong></a>, which contains one line: <code>william-fuchs.com</code>. That was hard. </p>
+<p>Now, all the rest has been pretty much said in Cloudflare's blog post linked above: Set the Custom SSL/TLS to Full (not Full(Strict) or Strict - otherwise HTTPS won't be validated), and create a CNAME record from your fancy domain to the one provided by GitHub. In my case, I followed GitHub's articles and directly pointed my fancy domain to the IP addresses of the servers on GitHub's side (as explained in the series of GitHub articles linked above). Make sure to select <strong>DNS only</strong> in the proxy status, rather than the default option <strong>Proxied</strong>, otherwise GitHub will have some difficulties validating the whole thing.</p>
+<p>You can also verify your domain, with a challenge thanks to a TXT record; again, explained in their article.</p>
+<h2 id="conclusions">Conclusions</h2>
+<p>As I wrote this article, my ambitions for it grew more and more. I actually started writing what is now a separate article: <a href="../mkdocs-material-first-steps/">The Metasite - First Steps</a>. Everything I described above was basically done before this article, in its current form, began. Then I started having fun, by doing a bunch of things I'll later describe (this will transform into a series of articles called "The Metasite", because there's clearly too much for one single article on this!). My priority was creating a <a href="/support_william_fuchs/">Support Me</a> page, so people can give me a lot of money, so I can buy a house, and a dog (a Husky), and a huge garage for wood working, and metal working, and big ass desk, like, big ass, so I can have my office environment, and next to it some place for painting (I'd like to start painting Warhammers 40K again) and <strong>this money would just be great to start a bunch of projects</strong>. I didn't even mention everything I'll be doing for my HomeLab. Or the crazy desktop PC build I started drafting in a CAD (Computer-Aided Design) software (FreeCAD). All of this costs time, of course, which I freely give away; but also money.</p>
+<p>That's why that <a href="/support_william_fuchs/">Support Me</a> page was a priority. And next in line would have been the <a href="/about_william_fuchs/">About Me</a>, just in case a friend or family member gave you a link to my site and you have no idea who I am. I think it's important to present myself to you.</p>
+<p><strong>BUT</strong>. I wanted to document everything as I went along, so I started documenting what I did for the <a href="/support_william_fuchs/">Support Me</a> page, because I was starting to play with the CSS and stuff. And then, I had a beautiful study I spend hours on, to choose the <abbr title="Static Site Generator">SSG</abbr>!! This was of course part of the to-document plan. As this part grew, I figured I'd just split the two articles. And there will be more. Because, spoiler alert, there are some things I'm really not liking with this framework. There are a lot of things I'm loving with this framework. So I won't change, I'm a bit invested right now. I want to go through all the plugins, all the setups, all the configurations and options etc. together with you guys. That's what we'll explore here. That won't be enough though. I need to make some fundamental changes to the framework to adapt it my needs. This will come later on.</p>
+<p>So, what was supposed to quickly get me running with a website where I could finish my post on my NAS migration, is turning into a project that will ask for a lot of time before I find it "satisfactory". When that point will be reached, it will mean it will be very easy for me to write new articles, and solely focus on that and publish them. It will also mean the Metasite series will be finished. Don't expect that to be finished so soon however. I will reprioritize writing the NAS migration article as soon as possible, after the <a href="/support_william_fuchs/">Support Me</a> page however (which is still a work in progress, but you'll have a link to my Patreon there, and Paypal - and if you didn't click on it already, I'm perhaps being too subtle - wink wink). And the <a href="/about_william_fuchs/">About Me</a> one.</p>
+<p>The reason for this reprioritization is that I really miss my NAS running. It's not running since I started this adventure. For reasons which shall remain a mystery for now.<br />
+On that note, I will leave you here. Thank you so much for reading until the end. I hope you found it distracting, if not helpful.</p>
+<!-- acronyms -->
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+        
+          
+          <a href="../mkdocs-material-first-steps/" class="md-footer__link md-footer__link--next" aria-label="Next: The Metasite - First Steps">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                The Metasite - First Steps
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://william-fuchs.com">william-fuchs.com</a> &copy; 2025 by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://william-fuchs.com/about-me">William Fuchs</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-ND 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nd.svg?ref=chooser-v1" alt=""></a></p>
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+    
+      
+      
+      
+      
+      <a href="None" id="hillfias_x" target="_blank" rel="noopener" title="Hillfias on X" class="md-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9zm-24.8 373.8h39.1L151.1 88h-42z"/></svg>
+      </a>
+    
+      
+      
+      
+      
+      <a href="None" id="hillfias_instagram" target="_blank" rel="noopener" title="Hillfias on Instagram" class="md-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141m0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7m146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8m76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8M398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1"/></svg>
+      </a>
+    
+      
+      
+      
+      
+      <a href="None" id="hillfias_reddit" target="_blank" rel="noopener" title="Hillfias on Reddit" class="md-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M0 256C0 114.6 114.6 0 256 0s256 114.6 256 256-114.6 256-256 256H37.1c-13.7 0-20.5-16.5-10.9-26.2L75 437C28.7 390.7 0 326.7 0 256m349.6-102.4c23.6 0 42.7-19.1 42.7-42.7s-19.1-42.7-42.7-42.7c-20.6 0-37.8 14.6-41.8 34-34.5 3.7-61.4 33-61.4 68.4v.2c-37.5 1.6-71.8 12.3-99 29.1-10.1-7.8-22.8-12.5-36.5-12.5-33 0-59.8 26.8-59.8 59.8 0 24 14.1 44.6 34.4 54.1 2 69.4 77.6 125.2 170.6 125.2s168.7-55.9 170.6-125.3c20.2-9.6 34.1-30.2 34.1-54 0-33-26.8-59.8-59.8-59.8-13.7 0-26.3 4.6-36.4 12.4-27.4-17-62.1-27.7-100-29.1v-.2c0-25.4 18.9-46.5 43.4-49.9 4.4 18.8 21.3 32.8 41.5 32.8zm-172.5 93.3c16.7 0 29.5 17.6 28.5 39.3s-13.5 29.6-30.3 29.6-31.4-8.8-30.4-30.5S160.3 247 177 247zm190.1 38.3c1 21.7-13.7 30.5-30.4 30.5s-29.3-7.9-30.3-29.6 11.8-39.3 28.5-39.3 31.2 16.6 32.1 38.3zm-48.1 56.7c-10.3 24.6-34.6 41.9-63 41.9s-52.7-17.3-63-41.9c-1.2-2.9.8-6.2 3.9-6.5 18.4-1.9 38.3-2.9 59.1-2.9s40.7 1 59.1 2.9c3.1.3 5.1 3.6 3.9 6.5"/></svg>
+      </a>
+    
+      
+      
+      
+      
+      <a href="None" id="hillfias_facebook" target="_blank" rel="noopener" title="Hillfias on Facebook" class="md-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256c0 120 82.7 220.8 194.2 248.5V334.2h-52.8V256h52.8v-33.7c0-87.1 39.4-127.5 125-127.5 16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287v175.9C413.8 494.8 512 386.9 512 256"/></svg>
+      </a>
+    
+      
+      
+      
+      
+      <a href="None" id="hillfias_twitch" target="_blank" rel="noopener" title="Hillfias on Twitch" class="md-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M391.17 103.47h-38.63v109.7h38.63ZM285 103h-38.63v109.75H285ZM120.83 0 24.31 91.42v329.16h115.83V512l96.53-91.42h77.25L487.69 256V0Zm328.24 237.75-77.22 73.12h-77.24l-67.6 64v-64h-86.87V36.58h308.93Z"/></svg>
+      </a>
+    
+      
+      
+      
+      
+      <a href="None" id="hillfias_youtube" target="_blank" rel="noopener" title="Hillfias on Youtube" class="md-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305m-317.51 213.508V175.185l142.739 81.205z"/></svg>
+      </a>
+    
+      
+      
+      
+      
+      <a href="None" id="hillfias_so" target="_blank" rel="noopener" title="Hillfias on Stack Overflow" class="md-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M290.7 311 95 269.7 86.8 309l195.7 41zm51-87L188.2 95.7l-25.5 30.8 153.5 128.3zm-31.2 39.7L129.2 179l-16.7 36.5L293.7 300zM262 32l-32 24 119.3 160.3 32-24zm20.5 328h-200v39.7h200zm39.7 80H42.7V320h-40v160h359.5V320h-40z"/></svg>
+      </a>
+    
+      
+      
+      
+      
+      <a href="None" id="hillfias_tiktok" target="_blank" rel="noopener" title="Hillfias on TikTok" class="md-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25v178.72A162.55 162.55 0 1 1 185 188.31v89.89a74.62 74.62 0 1 0 52.23 71.18V0h88a121 121 0 0 0 1.86 22.17A122.18 122.18 0 0 0 381 102.39a121.43 121.43 0 0 0 67 20.14Z"/></svg>
+      </a>
+    
+      
+      
+      
+      
+      <a href="None" id="hillfias_linkedin" target="_blank" rel="noopener" title="William Fuchs on LinkedIn" class="md-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+      </a>
+    
+  </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.path", "navigation.indexes", "toc.follow", "toc.integrate", "navigation.top", "navigation.footer", "header.autohide", "announce.dismiss", "content.tabs.link", "content.tooltips", "content.code.copy"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": {"CSS": "css", "HTML5": "html", "JavaScript": "js"}, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="../../javascripts/tablesort.number.min.js"></script>
+      
+        <script src="../../javascripts/tablesort.js"></script>
+      
+    
+  </body>
+</html>

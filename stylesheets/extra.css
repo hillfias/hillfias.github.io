@@ -1,0 +1,206 @@
+.paypal {
+    color: #0070e0;
+}
+
+.patreon {
+    color: #f96854;
+}
+
+.bitcoin {
+    color: #F7931A;
+}
+
+.buymeacoffee {
+    color: #FFDD00;
+}
+
+.youtube {
+    color: #EE0F0F;
+}
+
+.twitch {
+    color: #6441a5;
+}
+
+.center {
+    text-align: center;
+}
+
+a#hillfias_youtube:hover, a#hillfias_youtube:active, a#hillfias_youtube:focus {
+    color:#EE0F0F !important;
+}
+
+a#hillfias_twitch:hover, a#hillfias_twitch:active, a#hillfias_twitch:focus {
+    color:#6441a5 !important;
+}
+
+a#hillfias_linkedin:hover, a#hillfias_linkedin:active, a#hillfias_linkedin:focus {
+    color:#0a66c2 !important;
+}
+
+a#hillfias_tiktok:hover, a#hillfias_tiktok:active, a#hillfias_tiktok:focus {
+    /* color:#00f2ea !important; */
+    color:#ff0050 !important;
+}
+
+a#hillfias_so:hover, a#hillfias_so:active, a#hillfias_so:focus {
+    color:#F48024 !important;
+}
+
+a#hillfias_facebook:hover, a#hillfias_facebook:active, a#hillfias_facebook:focus {
+    color:#1778F2 !important;
+}
+
+a#hillfias_reddit:hover, a#hillfias_reddit:active, a#hillfias_reddit:focus {
+    color:#FF5700 !important;
+}
+
+a#hillfias_instagram:hover, a#hillfias_instagram:active, a#hillfias_instagram:focus {
+    color:#C13584 !important;
+}
+
+.md-social__link {
+    transition: all 0.2s;
+    transition-delay: 300ms;
+}
+
+.md-social__link:active {
+    transition: none;
+  }
+
+
+.md-button.card:not(.example):hover a, .md-button.card:not(.example):active a {
+    color: var(--md-accent-bg-color);
+}
+
+.md-button.card:not(.example):active {
+    background-color: var(--md-accent-fg-color);
+    border-color: var(--md-accent-fg-color);
+}
+
+
+
+.md-button.card:not(.example) a{
+    display: block;
+}
+
+body {
+    counter-reset: nav2;
+}
+
+article.md-content__inner h1 {
+    counter-reset: h2;
+}
+
+article.md-content__inner h2 {
+    counter-reset: h3;
+}
+
+article.md-content__inner h3 {
+    counter-reset: h4;
+}
+
+article.md-content__inner h4 {
+    counter-reset: h5;
+}
+
+article.md-content__inner h5 {
+    counter-reset: h6;
+}
+
+article.md-content__inner h2::before {
+    counter-increment: h2;
+    content: counter(h2) ". ";
+}
+
+article.md-content__inner h3::before {
+    counter-increment: h3;
+    content: counter(h2) "." counter(h3) ". ";
+}
+
+article.md-content__inner h4::before {
+    counter-increment: h4;
+    content: counter(h2) "." counter(h3) "." counter(h4) ". ";
+}
+
+article.md-content__inner h5::before {
+    counter-increment: h5;
+    content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) ". ";
+}
+
+article.md-content__inner h6::before {
+    counter-increment: h6;
+    content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "." counter(h6) ". ";
+}
+
+nav.md-nav--secondary > ul > li > a.md-nav__link {
+    counter-reset: nav3;
+}
+
+nav.md-nav--secondary > ul > li > nav > ul > li > a.md-nav__link {
+    counter-reset: nav4;
+}
+
+nav.md-nav--secondary > ul > li > nav > ul > li > nav > ul > li > a.md-nav__link {
+    counter-reset: nav5;
+}
+
+nav.md-nav--secondary > ul > li > nav > ul > li > nav > ul > li > nav > ul > li > a.md-nav__link {
+    counter-reset: nav6;
+}
+
+nav.md-nav--secondary > ul > li > a.md-nav__link::before {
+    counter-increment: nav2;
+    content: counter(nav2) ". ";
+}
+
+nav.md-nav--secondary > ul > li > nav > ul > li > a.md-nav__link::before {
+    counter-increment: nav3;
+    content: counter(nav2) "." counter(nav3) ". ";
+}
+
+nav.md-nav--secondary > ul > li > nav > ul > li > nav > ul > li > a.md-nav__link::before {
+    counter-increment: nav4;
+    content: counter(nav2) "." counter(nav3) "." counter(nav4) ". ";
+}
+
+nav.md-nav--secondary > ul > li > nav > ul > li > nav > ul > li > nav > ul > li > a.md-nav__link::before {
+    counter-increment: nav5;
+    content: counter(nav2) "." counter(nav3) "." counter(nav4) "." counter(nav5) ". ";
+}
+
+nav.md-nav--secondary > ul > li > nav > ul > li > nav > ul > li > nav > ul > li > nav > ul > li > a.md-nav__link::before {
+    counter-increment: nav6;
+    content: counter(nav2) "." counter(nav3) "." counter(nav4) "." counter(nav5) "." counter(nav6) ". ";
+}
+
+.md-sidebar {
+    width:max(12.1rem, 20%); /* 12.1rem by default */
+}
+
+@media screen and (max-width: 76.2344em) {
+    [dir="ltr"] .md-sidebar--primary {
+      left: min(-17.1rem, -20%);
+    }
+}
+
+@media screen and (max-width: 76.2344em) {
+    [data-md-toggle="drawer"]:checked ~ .md-container .md-sidebar--primary {
+      box-shadow: var(--md-shadow-z3);
+      transform: translateX(max(17.1rem, 20%));
+    }
+}
+
+.md-grid {
+    max-width:max(66rem, 80%);
+}
+
+/* Center Markdown Tables (requires md_in_html extension) */
+.center-table {
+    text-align: center;
+}
+
+.md-typeset .center-table :is(td,th):not([align]) {
+    /* Reset alignment for table cells */
+    text-align: initial;
+}
