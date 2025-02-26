@@ -59,6 +59,14 @@ a#hillfias_instagram:hover, a#hillfias_instagram:active, a#hillfias_instagram:fo
     color:#C13584 !important;
 }
 
+.md-social__link {
+    transition: all 0.2s;
+    transition-delay: 300ms;
+}
+
+.md-social__link:active {
+    transition: none;
+  }
 
 
 .md-button.card:not(.example):hover a, .md-button.card:not(.example):active a {
