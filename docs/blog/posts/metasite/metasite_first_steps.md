@@ -29,6 +29,221 @@ status: new
     - And then, the building of the different pages start, which is what I started describing below :)
     - talk about the table and other features used for the first article. And finally build the support page and finish talking about it.
 
+## Setting up a Blog
+### What does it look like?
+We've just toured the first pages of the [Getting Started](https://squidfunk.github.io/mkdocs-material/getting-started/) section:
+
+- We set up our environment with Python, an IDE, Material for MkDocs, a GitHub Pages repository and a Cloudflare domain.
+- We [created a boilerplate site](https://squidfunk.github.io/mkdocs-material/creating-your-site/) and uploaded it to GitHub Pages.
+- We created a [Continuous Deployment pipeline](https://squidfunk.github.io/mkdocs-material/publishing-your-site/) which will automatically publish our site every time we push to the main/master branch on GitHub, thanks to GitHub Actions.
+
+What is left for us in the _getting started_? [Customization] explains how we can add extra CSS stylesheets and JavaScript without even touching the framework. It's thought out to be extendable. This will very quickly become useful. Moreover, the theme, all the HTML templates, are overridable. Again, without even touching the framework. This can be done very simply by following the same structure the framework uses, in an `overrides` folder, and then creating any HTML page we wish to override. It's also possible to override simple blocks, rather than entire HTML templates; which we'll see very quickly as well. Finally it also explains how to write code in the framework itself, should more fundamental changes be wished. This is where I learned that Material for MkDocs was developed with [TypeScript], [RxJS] and [SASS]. I knew about SASS, makes sense, no problem. TypeScript? Indeed... It is developed in TypeScript at 24.1%. But I also see 32% of Python in the repository, which is not mentioned in that page. I had no idea what RxJS was: it's a JavaScript library for writing code around the **reactive programming paradigm**, which is asynchronous and event-based. In other words, we want to observe the state, and react to events, e.g. the click of a button. I have not delved into that. We'll see later if we need it.
+
+[Customization]: https://squidfunk.github.io/mkdocs-material/customization/
+[TypeScript]: https://www.typescriptlang.org/
+[RxJS]: https://github.com/ReactiveX/rxjs
+[SASS]: https://sass-lang.com
+
+
+That's basically it! This takes us to the [Blogs] tutorial, which is where things started getting kind of.... **unsatisfactory**. The tutorial basically takes you through the [Blog plugin], in a nice tutorial kind of way, rather than having to read through specifications and different options. This plugin is one of many, one of 13 to be precise. The Blog tutorial will actually take you through a tour of the most important plugins and how they nicely work with each other via the blog plugin. Let's take a look together at all that. And most importantly, let's have a good old rant at all I dislike (but there's a lot of good, of course; we wouldn't be here otherwise). 
+
+[Blogs]: https://squidfunk.github.io/mkdocs-material/tutorials/blogs/basic/
+[Blog plugin]: https://squidfunk.github.io/mkdocs-material/plugins/blog/
+
+What will the blog plugin do? It will organize your posts for you, in reverse chronological order, with pagination. It will create an archive menu, which will allow exploration of older posts by date. All blog posts can be described with metadata, often called "**frontmatter**". This also allows an organization based on **category**. And finally, metadata can be enriched with tags. This creates three ways to explore posts: by date with the archive (or most recent posts on home blog page), by tags, by category.
+
+Here's what it looks like:
+=== "Desktop View"
+    === "Blog"
+        ![blog](/assets/images/metasite_first_steps/blog_showcase_dark.png#only-dark){ loading=lazy, width=1220 }
+        ![blog](/assets/images/metasite_first_steps/blog_showcase_light.png#only-light){ loading=lazy, width=1220 }
+        /// caption
+        ///
+
+    === "Tags"
+        ![blog](/assets/images/metasite_first_steps/tags_showcase_dark.png#only-dark){ loading=lazy, width=1220 }
+        ![blog](/assets/images/metasite_first_steps/tags_showcase_light.png#only-light){ loading=lazy, width=1220 }
+        /// caption
+        ///
+
+    === "Archive"
+        ![blog](/assets/images/metasite_first_steps/archive_showcase_dark.png#only-dark){ loading=lazy, width=1220 }
+        ![blog](/assets/images/metasite_first_steps/archive_showcase_light.png#only-light){ loading=lazy, width=1220 }
+        /// caption
+        ///
+
+    === "Categories"
+        ![blog](/assets/images/metasite_first_steps/categories_showcase_dark.png#only-dark){ loading=, width=1220 }
+        ![blog](/assets/images/metasite_first_steps/categories_showcase_light.png#only-light){ loading=lazy, width=1220 }
+        /// caption
+        ///
+
+=== "Mobile View"
+    === "Blog"
+        === "Menu closed"
+            ![blog](/assets/images/metasite_first_steps/blog_showcase_mobile_dark.png#only-dark){ loading=lazy, width=360 }
+            ![blog](/assets/images/metasite_first_steps/blog_showcase_mobile_light.png#only-light){ loading=lazy, width=360 }
+            /// caption
+            ///
+        === "Menu opened"
+            ![blog](/assets/images/metasite_first_steps/blog_showcase_mobile_openmenu_dark.png#only-dark){ loading=lazy, width=360 }
+            ![blog](/assets/images/metasite_first_steps/blog_showcase_mobile_openmenu_light.png#only-light){ loading=lazy, width=360 }
+            /// caption
+            ///
+
+    === "Tags"
+        === "Menu closed"
+            ![tags](/assets/images/metasite_first_steps/tags_showcase_mobile_dark.png#only-dark){ loading=lazy, width=360 }
+            ![tags](/assets/images/metasite_first_steps/tags_showcase_mobile_light.png#only-light){ loading=lazy, width=360 }
+            /// caption
+            ///
+        === "Menu opened"
+            ![tags](/assets/images/metasite_first_steps/tags_showcase_mobile_openmenu_dark.png#only-dark){ loading=lazy, width=360 }
+            ![tags](/assets/images/metasite_first_steps/tags_showcase_mobile_openmenu_light.png#only-light){ loading=lazy, width=360 }
+            /// caption
+            ///
+        === "Table of Contents"
+            ![tags](/assets/images/metasite_first_steps/tags_showcase_mobile_openmenu_toc_dark.png#only-dark){ loading=lazy, width=360 }
+            ![tags](/assets/images/metasite_first_steps/tags_showcase_mobile_openmenu_toc_light.png#only-light){ loading=lazy, width=360 }
+            /// caption
+            ///
+
+    === "Archive"
+        === "Menu closed"
+            ![blog](/assets/images/metasite_first_steps/archive_showcase_mobile_dark.png#only-dark){ loading=lazy, width=360 }
+            ![blog](/assets/images/metasite_first_steps/archive_showcase_mobile_light.png#only-light){ loading=lazy, width=360 }
+            /// caption
+            ///
+        === "Menu opened"
+            ![blog](/assets/images/metasite_first_steps/archive_showcase_mobile_openmenu_dark.png#only-dark){ loading=lazy, width=360 }
+            ![blog](/assets/images/metasite_first_steps/archive_showcase_mobile_openmenu_light.png#only-light){ loading=lazy, width=360 }
+            /// caption
+            ///
+        === "Table of Contents"
+            ![tags](/assets/images/metasite_first_steps/archive_showcase_mobile_openmenu_toc_dark.png#only-dark){ loading=lazy, width=360 }
+            ![tags](/assets/images/metasite_first_steps/archive_showcase_mobile_openmenu_toc_light.png#only-light){ loading=lazy, width=360 }
+            /// caption
+            ///
+
+    === "Categories"
+        === "Menu closed"
+            ![blog](/assets/images/metasite_first_steps/categories_showcase_mobile_dark.png#only-dark){ loading=lazy, width=360 }
+            ![blog](/assets/images/metasite_first_steps/categories_showcase_mobile_light.png#only-light){ loading=lazy, width=360 }
+            /// caption
+            ///
+        === "Menu opened"
+            ![blog](/assets/images/metasite_first_steps/categories_showcase_mobile_openmenu_dark.png#only-dark){ loading=lazy, width=360 }
+            ![blog](/assets/images/metasite_first_steps/categories_showcase_mobile_openmenu_light.png#only-light){ loading=lazy, width=360 }
+            /// caption
+            ///
+        === "Table of Contents"
+            ![tags](/assets/images/metasite_first_steps/categories_showcase_mobile_openmenu_toc_dark.png#only-dark){ loading=lazy, width=360 }
+            ![tags](/assets/images/metasite_first_steps/categories_showcase_mobile_openmenu_toc_light.png#only-light){ loading=lazy, width=360 }
+            /// caption
+            ///
+
+!!! note
+    I'm very happy with all the above screenshots. There were so many to take that I wrote [an article](metasite_taking_screenshots.md) on how to streamline the process. I'm very happy with the surprise that nesting of [Content tabs] works flawlessly (I tried it out, out of curiosity, because I thought this would be the best way to communicate in a visual manner in an article - without resorting to embedding a video).  
+    You'll also note, if you try to set up your blog yourself, that you won't immediately obtain the above result. I did a bit of CSS to number all headings, and a bunch more which I'll cover into more details in [chapter 2](#quick-tour-of-plugins-and-setup).
+
+[Content tabs]: https://squidfunk.github.io/mkdocs-material/reference/content-tabs/ 
+
+### The Dealbreaker - Categories
+What I very quickly realize, is that a blog is absolutely not what I want. I mean, not primarily. I'm not against exploring some quick blogging with short posts every once in a while, to rant about this, or discuss about that; share a really cool feature I just discovered... But _blogging_, in my mind, is a place for more superficial writings. I'm not saying that's a bad thing! I'm saying that's not my main objective. The superficiality of posts is embedded in its temporality: posts are released on a certain date, and then archived. The content will get outdated; posts are not meant as a knowledge repository for up to date content. 
+
+When I discovered the mindset behind the blog plugin, I asked myself "how do people read blogs? Do they just go on the archive and read a post that attracts them?". Which is where tagging comes in. And Categories come in. These could have salvaged the blog plugin. Unfortunately, not in their current form.
+
+Having an "Archive" page, that's a pretty nice-to-have. But the Category organization is what I'm mainly looking at. Thanks to this, I can organize my articles based on the category they belong to. For example, I have a _HomeOffice_ bookmark folder in my browser, which can fuel some articles on the subject. I'd like to translate my bookmark folders into categories. I can add the _HomeOffice_ category to the metadata of all related articles. That works. Except that under _HomeOffice_ I have a folder for _Chairs_. This sums up all the links I have for office chairs. Maybe I want to do one article per chair, in this case I could have them all in the _HomeOffice_ category, with a "chair" tag.
+
+The issue arises when other _HomeOffice_ related subjects come into play: I have a folder for desks. Maybe I want to create multiple articles on this subject as well. I could use a "desk" tag, sure. But if I click on my _HomeOffice_ category in the menu, I now have a mix of everything, chairs and desks. What if I add printer articles, monitor, mice, mousepads, scanners, PC! A PC is pretty complex though; what if I want to talk about CPU, GPU, Motherboards, KVMs, PSUs etc. separately; as their own little world. I could use tags, sure.
+
+You got my point: the categories menu quickly becomes useless for one single reason. There are no **sub-categories**. That's the **dealbreaker**. There was [one question about this, back in November 2022]; but it was a two-man conversation of three messages, concluded with "not planned" from Material's author.
+
+Very simply put, what I'm interested in is **Taxonomy**: I love organizing, classifying, sorting, categorizing knowledge. This can't be done with a flat list (i.e. the oppositie of a hierarchy, of nested lists, of lists within lists, or, here, categories within categories). I don't want this just because I'm a complete freak, I mean, not only; I want this so that users can easily find and explore and dig into what they're most interested in. You could argue that a search function, which is integrated, is enough. But that'd be a bad argument. How do users know what to search? I want users to be able to **explore** the website. But perhaps tags can help?
+
+[one question about this, back in November 2022]: https://github.com/squidfunk/mkdocs-material/discussions/4642
+
+### Tags
+As with any other pages (even outside the blog) you can add tags to blog posts, thanks to what people call frontmatter, i.e. metadata for a blog post / an article. I like being able to tag articles, however I don't like how it's presented. The horrible presentation aside, which lists all tags and regroups all pages tagged with a certain tag as a list under that tag; this still doesn't address the need for a hierarchy. Wait a second, there is a [tags hierarchy feature]! It's for sponsors of the project however. Whilst researching a demo of that currently experimental feature (which will no doubt be released for everyone in due time), I landed on [this blog post]. I love what msiter Jake Howard did there. His menu is still a flat list, there's no nesting, but it does exactly what I want in terms of navigation: High level categories (which I hope to have hierarchy for, which would lead to sub-menus) rather than an archive or whatever. The issue is that it doesn't solve the SEO/URL problem: the blog post is still just a post under /blog/. Though I don't doubt this could be fixed as well.
+
+I won't even mention the archive any further than I already have; as it's a really nice way to view all the posts based on dates; and absolutely not what I want for my website. Would be nice for a blog though! Wait, this is a blog plugin... lol
+
+[tags hierarchy feature]: https://squidfunk.github.io/mkdocs-material/plugins/tags/#config.tags_hierarchy 
+[this blog post]: https://notes.theorangeone.net/notes/mkdocs-nav-by-tag/
+
+### A Blogpost Disaster
+We've seen a bunch of "home" pages for ways to go about blog posts, but we haven't checked the blog post itself yet! Here it is:
+
+=== "Desktop View"
+    ![blog](/assets/images/metasite_first_steps/blogpost_showcase_dark.png#only-dark){ loading=lazy, width=1220 }
+    ![blog](/assets/images/metasite_first_steps/blogpost_showcase_light.png#only-light){ loading=lazy, width=1220 }
+    /// caption
+    ///
+
+=== "Mobile View"
+    === "Top of page"
+        ![blog](/assets/images/metasite_first_steps/blogpost_showcase_mobile_dark.png#only-dark){ loading=lazy, width=360 }
+        ![blog](/assets/images/metasite_first_steps/blogpost_showcase_mobile_light.png#only-light){ loading=lazy, width=360 }
+        /// caption
+        ///
+
+    === "Menu"
+        ![tags](/assets/images/metasite_first_steps/blogpost_showcase_mobile_openmenu_dark.png#only-dark){ loading=lazy, width=360 }
+        ![tags](/assets/images/metasite_first_steps/blogpost_showcase_mobile_openmenu_light.png#only-light){ loading=lazy, width=360 }
+        /// caption
+        ///
+
+    === "Table of Contents"
+        ![tags](/assets/images/metasite_first_steps/blogpost_showcase_mobile_toc_dark.png#only-dark){ loading=lazy, width=360 }
+        ![tags](/assets/images/metasite_first_steps/blogpost_showcase_mobile_toc_light.png#only-light){ loading=lazy, width=360 }
+        /// caption
+        ///
+
+Let's start with the [desktop view](#__tabbed_8_1). You can notice that a blogpost has some metadata attached to it, which, on the desktop view at least, you can nicely visualize side-by-side with the article, alongside the table of contents. I'm not too much of a fan of the tags being at the top of the article, because if that number grew, it would be very distracting. If we come back to the metadata for a second, I really love that you can see when the article was written, and last updated. To me this is crucial information to understand the context for that article; something that is too often left out on "journalistic" posts on the internet. I also like the Category icon indicating which category of article we're currently looking at. An article could belong to multiple categories, but this quickly becomes ugly if too many categories are listed there. I think what I'm really looking for is the [breadcrumbs feature], which would perfectly indicate where the current article is located, even if it's nested in multiple levels of "categories". However, that's another insider feature, released for sponsors only. For now.
+
+[breadcrumbs feature]: https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#navigation-path
+
+Finally, we have the estimated time to read, which is a nice feature, and automatically calculated. Like all of the other metadata, it can be specified directly in the frontmatter of the page, if we feel like it's a bit optimistic (or the contratry). We can even have some _related links_ in that section, showing up exactly like the navigation on regular pages (you've seen previously). They can be nested and everything.
+
+Alright. On to the disaster. [The mobile view](#__tabbed_9_1): you can quickly get where I'm getting at with the tags. They eat a lot of space at the top of the article there on mobile. But, Ok. That's far from the worst. Did you notice something? Yes, we don't have the table of contents, or the metadata associated with the article. Alright, no biggie. This is to be expected. On regular pages, we had the table of contents not too far away, at the press of a button after opening the menu. Let's check the [menu](#__tabbed_9_2) first: we're back to the original blog menu. As if we were on the blog homepage. If I'm in a particular category, or even nested category, or nested tag or whatever; I completely lose all of that information for navigation. The blog post is just that: a blog post. you want to navigate to another blog post? Start your search all over again. Start from the tags, or archive, or categories.
+
+Jesus.
+
+That's exactly the same for the desktop view by the way. You will have noticed there was no navigation at all. But again, breadcrumbs for the win. Except I don't have access to them. But they'd be the solution. For desktop. For mobile, I still wouldn't like the experience of being braught back to the base menu when I click on that menu. Because I expect classification. Because I don't really want a _blog_. If a blog is just a stupid list of blog posts, sorted by date, which can be enriched with some metadata, that's **not** what I want.
+
+We left the best for the end: the [Table of contents](#__tabbed_9_3). You saw the menu, right? No icon that would indicate any access to any table of contents, or any of the metadata nicely displayed on the side when in desktop view. Nooooo... No sir, no ma'am. Nope. No, no, no. IT'S AT THE FUCKING BOTTOM OF THE PAGE. Who in there right fucking mind would put the time it takes to read an article at the end of the article?! Who is the insane mother (ok gotta care who I insult, because I actually love all the work that was put in this great theme for the MkDocs framework - so just clarifying my swearing is meant as sensationalism for my dear viewers - not as an offense for people who work their asses off to actually build something :))... I was saying... Who's the insane bitch that thinks it's relevant to put the date at the bottom of the article?! "Oh thank you dude, now I know I lost 43min of my time reading a post from 2017 with a bunch of outdated information on the current state of quantum mechanics - thanks a lot!!".
+
+God.
+
+The last thing you'll notice, I have no idea if I'm the first experiencing that bug, and it'd be nice of me to report it rather than silently scream by myself on my tiny grumpy loser website, but the _related links_ feature seem hella broken on mobile man. wtf. LMAO. Hate the Table of contents as well: If I didn't style with some CSS to put some numbers on headings, you'd never have guessed that "Tags" is a separate heading from "The Dealbreaker - Categories", or even that those are sub-chapters of "Setting up a Blog".
+
+Terrible, terrible.
+
+
+!!! danger
+    I just discovered another bug. You see the links in the previous paragraphs, except the one for the breadcrumbs feature. Those are internal links, to this page. They are supposed to take you to the relevant content tab. I have checked, [this feature was released in 2022](https://github.com/squidfunk/mkdocs-material/issues/3976#issuecomment-1146586469). It appears from the link of the commit that this was for Insiders only (i.e. for sponsors). I've tested on the official site, it works. However the links generated from the content tabs aren't like mine. Instead of having some **#__tabbed_9_3** URL fragment, it creates a nice fragment that appends the name of the content tab to trigger, to the header it's under. However I can't make it work here. Maybe it's still an insider only feature.
+
+    Nonetheless, this got me on the road of [permalinks](https://www.mkdocs.org/user-guide/writing-your-docs/#linking-to-pages), which I activated. You can now click on the icon that appears when you hover over a header to copy a link to it. When this is done, it breaks the content tabs on the current page. 
+
+    Actually, this was caused by a custom script I was running... haha
+
+
+!!! danger
+    To write. Pictures of blog post. Lack of ToC integration in menu. Metadata and toc at the bottom of the screen in mobile view. WTF is it doing there. Tags at the top, probably eating all the space if there are plenty.
+
+### Conclusion on the blog
+There will be some coding to be done. Hopefully without touching the base framework, so I can still profit of updates etc. without too much difficulties (i.e. retrofitting them in a fork). Jake's little code snippet made me discover [hooks], which I didn't see documented in the [Customization page of Material]. Because it's something native to [MkDocs itself]! This is very useful; it would have been nice to see that documented somewhere in Material's customization space, as I did not think I would have to refer to the base framework's documentation while using Material.
+
+Anyhow, The navigation is not the best, but for the two or three articles I have (which are for the Metasite series) and the one article I intend on publishing for the NAS migration; I don't think that matters too much. What I need to avoid is working on the website more than on the content. All of this is dangerously delaying the publishing of my NAS migration article, which means it's delaying my NAS running again. Which means I'm not watching any TV show, or movie, or anime; and that's been the case for quite the major part of 2025 as I'm writing this article on the 2nd of March! Except I'm addicted to watching TV!! So I got stop jerking around with the website building, and get to publishing that NAS article so I can watch TV instead of eating Youtube and Twitch ads all day long. God this ad-infested world really needs a reset. I'll write something on how to do that reset (i.e. get rid of the ads; no I'm not talking about ending the world, I quite like living and life in general - even if some lifeforms took the appearance of being assholes - it's just bad programming).
+
+Oh but before I publish that NAS article, I want to finish the [Support Me](/support_william_fuchs/) and [About Me](/about_william_fuchs/) articles... I'm like a broken record repeating the same things.
+
+[hooks]: https://github.com/squidfunk/mkdocs-material/discussions/5060
+[Customization page of Material]: https://squidfunk.github.io/mkdocs-material/customization/
+[MkDocs itself]: https://www.mkdocs.org/user-guide/configuration/#hooks
+
+## Quick Tour of plugins and setup
+So, we have a blog setup, sort of. Not really. I've basically showed you the results, pointed you to the tutorials. And ranted a bit. In this section, we'll finalize, very quickly, the tour of Material's documentation. At least what I've explored so far. Of course this doesn't replace reading it for yourself.
 
 ## I Need A Plan: Beg For Money
 
@@ -301,7 +516,7 @@ Let's review the fix: `#!css .md-button.card:hover a` reading right to left, thi
 
 The second fix is much easier: make all the links `#!css block`s. Done. It now occupies the entire cell. Almost, actually; there being some padding: 
 
-![Showcases the grid cell, now turned button, with it's interior padding.](/assets/images/card_padding.png)
+![Showcases the grid cell, now turned button, with it's interior padding.](/assets/images/metasite_first_steps/card_padding.png)
 /// caption
 ///
 
@@ -338,11 +553,11 @@ I'm good though.
 Something I can do however, right now, and just realized, is get my color right.  
 You can see on the code above that colors are intelligently computed from the CSS [var()](https://developer.mozilla.org/en-US/docs/Web/CSS/var), the mkdocs-material framework created a level of indirection here. This is what I need to get, except I want the variable used on hover of a button. It's possible to modify the state of the element that is being inspected (at least, on Firefox), to see its related properties when on hover, or active etc.:  
 
-![Modify HTML element to hover on inspection tool to see related CSS properties for that state.](/assets/images/inspect_hover.png)
+![Modify HTML element to hover on inspection tool to see related CSS properties for that state.](/assets/images/metasite_first_steps/inspect_hover.png)
 /// caption
 ///
 Which gives...
-![Display of CSS properties for button when on hover. One of which is the color, precomputed with the variable --md-accent-bg-color, which gives the hex code #fff, i.e. white color.](/assets/images/css_var_button_hover.png)
+![Display of CSS properties for button when on hover. One of which is the color, precomputed with the variable --md-accent-bg-color, which gives the hex code #fff, i.e. white color.](/assets/images/metasite_first_steps/css_var_button_hover.png)
 /// caption
 ///
 

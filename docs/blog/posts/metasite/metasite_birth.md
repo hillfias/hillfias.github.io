@@ -324,13 +324,13 @@ OH BOY I HAD SOME FUN THERE. Since this is in all caps, it is perhaps ironic. Ev
 
 Ok, you're happy. Except no validation at all is taking place. You save your `mkdocs.yml` file with mistakes, and you have to wait for the live preview server automatic building to tell you there's an issue:
 
-![Screenshot of a build error in the terminal when the value of theme, which can only be mkdocs, readthedocs, material, was unrecognized as 'hehe'.](/assets/images/yaml_build_error.png){ loading=lazy }
+![Screenshot of a build error in the terminal when the value of theme, which can only be mkdocs, readthedocs, material, was unrecognized as 'hehe'.](/assets/images/metasite_birth/yaml_build_error.png){ loading=lazy }
 /// caption
 ///
 
 That's not what you want. You want that plugin that makes yaml validation within your IDE to highlight your mistakes in real time! So, I went to my extensions, looked for the yaml extension, went into features and runtime status, and, oh! Surprise motherfucker! We've got some fucking errors you dumb bitch! Go figure out by yourself that they're here!  
 
-![VScode interface that illustrates what's described above and more particularly, the error message detailed below.](/assets/images/yaml_schema_validation_error.png){ loading=lazy }
+![VScode interface that illustrates what's described above and more particularly, the error message detailed below.](/assets/images/metasite_birth/yaml_schema_validation_error.png){ loading=lazy }
 /// caption
 ///
 
@@ -360,25 +360,25 @@ Coincidently, this looks an aweful like the word Fox. Doesn't it? What a coincid
 
 Wait, where was I, I think we were talking about something interesting like YAML schema validation. Right. So, I have my local file, which isn't raising any errors in the very hidden depths of the YAML validation extension. But it's still not validating that the name of the theme should not be "hehe".
 
-![VScode interface that illustrates a description being displayed when hovering over the theme "name" field. The description being what this field is for.](/assets/images/theme_name_description.png){ loading=lazy }
+![VScode interface that illustrates a description being displayed when hovering over the theme "name" field. The description being what this field is for.](/assets/images/metasite_birth/theme_name_description.png){ loading=lazy }
 /// caption
 ///
 
 At least I have a description... Cool... If I try the ++ctrl+space++ trick, out of curiosity, it should give me autocompletion. This is completely out of curiosity, because if it can't validate the current value isn't the correct one, how would it give me possible values?
 
-![VScode interface that illustrates the auto-completion menu displaying a bunch of weird ass options, with one being the incorrect but intelligible "mkdocs" value.](/assets/images/theme_name_mkdocs.png){ loading=lazy }
+![VScode interface that illustrates the auto-completion menu displaying a bunch of weird ass options, with one being the incorrect but intelligible "mkdocs" value.](/assets/images/metasite_birth/theme_name_mkdocs.png){ loading=lazy }
 /// caption
 ///
 
 It gives me a bunch of nonsense. And the option "mkdocs". Which isn't a possible value. As we previously saw in the error message, the correct values are mkdocs, readthedocs or material. The latter of which is what we need.
 
-![VScode interface that a field named "yolo", perfectly working, not raising any errors. The value is "hello!".](/assets/images/additional_properties.png){ loading=lazy, align=left } 
+![VScode interface that a field named "yolo", perfectly working, not raising any errors. The value is "hello!".](/assets/images/metasite_birth/additional_properties.png){ loading=lazy, align=left } 
 Ok, maybe it's just not validating any values of fields, but at least it'll validate that the fields are the correct ones, right? Mother F!...  
 This builds just fine by the way. Even the framework's chill with that.
 
 Right. There's an option for _Additional Properties_. You could want to enforce a schema for a certain set of properties while still allowing it be extended after all. So I ++ctrl+shift+p++, type `settings`, and choose `Preferences: Open Settings (UI)`. The UI rather than my JSON configuration file so that I can get all the default options displayed, in case there is anything for that additional properties feature, which I didn't know at the time. I tick the box to disable additional properties and oh god, what's this.
 
-![VScode "PROBLEMS" interface, listing 13 different issues with the YAML file.](/assets/images/problems.png){ loading=lazy }
+![VScode "PROBLEMS" interface, listing 13 different issues with the YAML file.](/assets/images/metasite_birth/problems.png){ loading=lazy }
 /// caption
 ///
 
@@ -432,7 +432,7 @@ Except, this might not be working, right away, or at some point. For example. If
 
 There you go. Your Actions won't fail anymore. There's one more thing to be wary of: this CI will publish your site to another branch in your repository: **gh-pages**. Under your repository's settings, Pages, Build and deployment, Source, you'll have the choice between deploying your site from a **branch** or **GitHub Actions**. Make sure it's the **former**!! Despite using a GitHub Action to run everything for you every time you commit some code changes, it'll "just" publish the website to the `gh-pages` branch. So you have to tell GitHub to Deploy from a branch, and choose `gh-pages`  `/root`:
 
-![GitHub pages interface, showcasing what was described right above.](/assets/images/github_pages_build.png){ loading=lazy }
+![GitHub pages interface, showcasing what was described right above.](/assets/images/metasite_birth/github_pages_build.png){ loading=lazy }
 /// caption
 ///
 
@@ -440,7 +440,7 @@ You'll also notice in the above picture some extra details about some TLS certif
 
 You can review all your previous deployments from the Actions tab:
 
-![GitHub Actions interface, showcasing the few pipeline runs (some red, which means there were issues, some green).](/assets/images/github_actions.png){ loading=lazy }
+![GitHub Actions interface, showcasing the few pipeline runs (some red, which means there were issues, some green).](/assets/images/metasite_birth/github_actions.png){ loading=lazy }
 /// caption
 ///
 
@@ -453,8 +453,8 @@ I'll skip all the complicated parts about how or why or when or who or where etc
 
 Let's take things one at a time. First you need to buy your domain. There are plenty of sites offering that service. I've read really bad stories about some of them, like godaddy. I'm going to directly recommend the one I picked: you know it!! [Cloudflare](https://www.cloudflare.com/). Why? I trust it. It has excellent reputation. I've read a good number of articles on their site, e.g. [one explaining what DNS is](https://www.cloudflare.com/learning/dns/what-is-dns/), or what [anycast](https://www.cloudflare.com/learning/cdn/glossary/anycast-network/) is. I've seen them everywhere, protecting websites with anti-bot systems (that I have to painfully figure out how to bypass for automation purposes ahaha... But that's another story; and again, I'm just using what other people have developed). They are a CDN, Content Delivery Network, which means they'll be caching your webpages, css, javascript, images etc. to serve them as close and quickly to the end customer as possible. There's a ton more features you'll get with them that I have not even begun to explore! Just look at the vertical menu on the left hand-side in the below screenshot; web analytics, Email, Security, Optimization for speed, quick actions!... Don't pay attention to the number of unique visitors and total requests I have on my website; I'm really really famous.
 
-![GitHub pages interface, showcasing what was described right above.](/assets/images/cloudflare_dark.png#only-dark){ loading=lazy }
-![GitHub pages interface, showcasing what was described right above.](/assets/images/cloudflare.png#only-light){ loading=lazy }
+![GitHub pages interface, showcasing what was described right above.](/assets/images/metasite_birth/cloudflare_dark.png#only-dark){ loading=lazy }
+![GitHub pages interface, showcasing what was described right above.](/assets/images/metasite_birth/cloudflare.png#only-light){ loading=lazy }
 /// caption
 ///
 

@@ -1,5 +1,3 @@
-# NAS-Related Tags
-
-Here's a list of tags used on all articles regarding NAS:
+# Tags
 
 <!-- material/tags -->

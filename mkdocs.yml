@@ -4,7 +4,6 @@ site_url: https://william-fuchs.com/
 
 theme:
   name: material
-  yolo: hello!
   custom_dir: overrides
   palette:
     # Palette toggle for automatic mode
@@ -178,6 +177,8 @@ markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
   - tables      
+  - toc:
+      permalink: '#'
 
 extra_javascript:
   - javascripts/mathjax.js
@@ -206,5 +207,6 @@ nav:
         - PC: projects/homeOffice/pc.md
   - Blog: 
     - blog/index.md
+    - blog/tags.md
   - About Me: about_william_fuchs.md
   - Support Me: support_william_fuchs.md

@@ -204,3 +204,10 @@ nav.md-nav--secondary > ul > li > nav > ul > li > nav > ul > li > nav > ul > li 
     /* Reset alignment for table cells */
     text-align: initial;
 }
+
+figure img {
+    border-radius: .2rem;
+    box-shadow: var(--md-shadow-z1);
+    display: flow-root;
+    border: .075rem solid var(--md-typeset-a-color);
+}
